@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DB_Copycenter.Forms;
 
 namespace DB_Copycenter
 {
@@ -10,7 +11,7 @@ namespace DB_Copycenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Autorization());
+            Application.Run(new WorkerForm());
         }
     }
 }

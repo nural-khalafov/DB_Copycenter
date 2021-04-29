@@ -29,15 +29,15 @@ namespace DB_Copycenter.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,10 +59,45 @@ namespace DB_Copycenter.Forms
             this.groupBox1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(653, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 657);
+            this.groupBox1.Size = new System.Drawing.Size(599, 395);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заказ услуг";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(6, 173);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 81);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ПРИОБРЕСТИ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ServiceName,
+            this.ServicePrice});
+            this.dataGridView1.Location = new System.Drawing.Point(137, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(456, 281);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // ServiceName
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ServiceName.HeaderText = "Название услуги";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.Width = 200;
+            // 
+            // ServicePrice
+            // 
+            this.ServicePrice.HeaderText = "Цена услуги";
+            this.ServicePrice.Name = "ServicePrice";
+            this.ServicePrice.Width = 150;
             // 
             // label1
             // 
@@ -81,41 +116,6 @@ namespace DB_Copycenter.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(213, 24);
             this.comboBox1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ServiceName,
-            this.ServicePrice});
-            this.dataGridView1.Location = new System.Drawing.Point(153, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(415, 281);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // ServiceName
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ServiceName.HeaderText = "Название услуги";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.Width = 200;
-            // 
-            // ServicePrice
-            // 
-            this.ServicePrice.HeaderText = "Цена услуги";
-            this.ServicePrice.Name = "ServicePrice";
-            this.ServicePrice.Width = 150;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(22, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 81);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ПРИОБРЕСТИ";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -186,7 +186,7 @@ namespace DB_Copycenter.Forms
             this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(635, 657);
+            this.groupBox2.Size = new System.Drawing.Size(635, 395);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Клиент";

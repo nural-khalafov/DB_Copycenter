@@ -12,3 +12,17 @@ E:\VSProjects\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.AdminFor
 E:\VSProjects\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.ClientForm.resources
 E:\VSProjects\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.WorkerForm.resources
 E:\VSProjects\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.RegistrationForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\DB_Copycenter.exe.config
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\DB_Copycenter.exe
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\DB_Copycenter.pdb
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.csprojAssemblyReference.cache
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.AdminForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Autorization.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.ClientForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.WorkerForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Properties.Resources.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.RegistrationForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.csproj.GenerateResource.cache
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.csproj.CoreCompileInputs.cache
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.exe
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.pdb
