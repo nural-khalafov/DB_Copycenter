@@ -26,3 +26,4 @@ E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copyc
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.csproj.CoreCompileInputs.cache
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.exe
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.pdb
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.InventoryForm.resources

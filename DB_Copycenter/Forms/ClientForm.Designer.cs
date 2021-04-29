@@ -29,7 +29,7 @@ namespace DB_Copycenter.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -67,9 +67,9 @@ namespace DB_Copycenter.Forms
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(6, 173);
+            this.button1.Location = new System.Drawing.Point(484, 196);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 81);
+            this.button1.Size = new System.Drawing.Size(109, 60);
             this.button1.TabIndex = 3;
             this.button1.Text = "ПРИОБРЕСТИ";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,15 +80,15 @@ namespace DB_Copycenter.Forms
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceName,
             this.ServicePrice});
-            this.dataGridView1.Location = new System.Drawing.Point(137, 68);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(456, 281);
             this.dataGridView1.TabIndex = 2;
             // 
             // ServiceName
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle4;
             this.ServiceName.HeaderText = "Название услуги";
             this.ServiceName.Name = "ServiceName";
             this.ServiceName.Width = 200;
@@ -196,11 +196,11 @@ namespace DB_Copycenter.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 461);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(1280, 720);
-            this.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.MaximumSize = new System.Drawing.Size(1280, 500);
+            this.MinimumSize = new System.Drawing.Size(1280, 500);
             this.Name = "ClientForm";
             this.Text = "Client Form";
             this.groupBox1.ResumeLayout(false);

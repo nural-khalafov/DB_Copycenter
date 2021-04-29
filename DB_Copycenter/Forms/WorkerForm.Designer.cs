@@ -43,22 +43,17 @@ namespace DB_Copycenter.Forms
             this.ReportIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportConsumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedWorkerAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ClientSelfDataAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientCashData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedClientAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -78,18 +73,23 @@ namespace DB_Copycenter.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.FilialBranchName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FilialBranchCountry = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FilialCity = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FilialAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilialOpenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedFilial = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button10 = new System.Windows.Forms.Button();
+            this.ClientSelfDataAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientCashData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -99,10 +99,10 @@ namespace DB_Copycenter.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -158,7 +158,7 @@ namespace DB_Copycenter.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(568, 294);
+            this.button1.Location = new System.Drawing.Point(614, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 65);
             this.button1.TabIndex = 1;
@@ -192,7 +192,7 @@ namespace DB_Copycenter.Forms
             this.ReportConsumption});
             this.dataGridView1.Location = new System.Drawing.Point(26, 294);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(636, 65);
+            this.dataGridView1.Size = new System.Drawing.Size(582, 65);
             this.dataGridView1.TabIndex = 0;
             // 
             // ReportDescription
@@ -218,6 +218,8 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button14);
+            this.groupBox4.Controls.Add(this.button13);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button4);
@@ -234,11 +236,22 @@ namespace DB_Copycenter.Forms
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Панель Администратора филиала";
             // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(580, 19);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 74);
+            this.button10.TabIndex = 20;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(490, 352);
+            this.button5.Location = new System.Drawing.Point(490, 399);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 80);
+            this.button5.Size = new System.Drawing.Size(84, 35);
             this.button5.TabIndex = 19;
             this.button5.Text = "Удалить";
             this.button5.UseVisualStyleBackColor = true;
@@ -247,16 +260,16 @@ namespace DB_Copycenter.Forms
             // 
             this.button4.Location = new System.Drawing.Point(490, 258);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 80);
+            this.button4.Size = new System.Drawing.Size(84, 35);
             this.button4.TabIndex = 18;
             this.button4.Text = "Добавить";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(490, 149);
+            this.button3.Location = new System.Drawing.Point(490, 194);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 80);
+            this.button3.Size = new System.Drawing.Size(84, 35);
             this.button3.TabIndex = 17;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
@@ -265,7 +278,7 @@ namespace DB_Copycenter.Forms
             // 
             this.button2.Location = new System.Drawing.Point(490, 45);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 80);
+            this.button2.Size = new System.Drawing.Size(84, 35);
             this.button2.TabIndex = 16;
             this.button2.Text = "Добавить";
             this.button2.UseVisualStyleBackColor = true;
@@ -276,34 +289,11 @@ namespace DB_Copycenter.Forms
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.WorkerPositionAdmin,
             this.WorkerWorkExperienceAdmin,
-            this.WorkerSalaryAdmin,
-            this.SelectedWorkerAdmin});
+            this.WorkerSalaryAdmin});
             this.dataGridView4.Location = new System.Drawing.Point(10, 258);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(469, 174);
+            this.dataGridView4.Size = new System.Drawing.Size(452, 174);
             this.dataGridView4.TabIndex = 15;
-            // 
-            // WorkerPositionAdmin
-            // 
-            this.WorkerPositionAdmin.HeaderText = "Должность";
-            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
-            this.WorkerPositionAdmin.Width = 150;
-            // 
-            // WorkerWorkExperienceAdmin
-            // 
-            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
-            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
-            // 
-            // WorkerSalaryAdmin
-            // 
-            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
-            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
-            // 
-            // SelectedWorkerAdmin
-            // 
-            this.SelectedWorkerAdmin.HeaderText = "";
-            this.SelectedWorkerAdmin.Name = "SelectedWorkerAdmin";
-            this.SelectedWorkerAdmin.Width = 50;
             // 
             // label11
             // 
@@ -321,30 +311,11 @@ namespace DB_Copycenter.Forms
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClientSelfDataAdmin,
-            this.ClientCashData,
-            this.SelectedClientAdmin});
+            this.ClientCashData});
             this.dataGridView3.Location = new System.Drawing.Point(10, 45);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(469, 184);
+            this.dataGridView3.Size = new System.Drawing.Size(452, 184);
             this.dataGridView3.TabIndex = 13;
-            // 
-            // ClientSelfDataAdmin
-            // 
-            this.ClientSelfDataAdmin.HeaderText = "Личные данные";
-            this.ClientSelfDataAdmin.Name = "ClientSelfDataAdmin";
-            this.ClientSelfDataAdmin.Width = 200;
-            // 
-            // ClientCashData
-            // 
-            this.ClientCashData.HeaderText = "Личный счёт";
-            this.ClientCashData.Name = "ClientCashData";
-            this.ClientCashData.Width = 150;
-            // 
-            // SelectedClientAdmin
-            // 
-            this.SelectedClientAdmin.HeaderText = "";
-            this.SelectedClientAdmin.Name = "SelectedClientAdmin";
-            this.SelectedClientAdmin.Width = 50;
             // 
             // label10
             // 
@@ -359,6 +330,8 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button12);
+            this.groupBox3.Controls.Add(this.button11);
             this.groupBox3.Controls.Add(this.dataGridView6);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.button8);
@@ -376,11 +349,23 @@ namespace DB_Copycenter.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Панель Ген. Директора";
             // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView6.Location = new System.Drawing.Point(292, 45);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(450, 184);
+            this.dataGridView6.TabIndex = 23;
+            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(789, 354);
+            this.button9.Location = new System.Drawing.Point(789, 392);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(84, 80);
+            this.button9.Size = new System.Drawing.Size(84, 42);
             this.button9.TabIndex = 22;
             this.button9.Text = "Удалить";
             this.button9.UseVisualStyleBackColor = true;
@@ -389,16 +374,16 @@ namespace DB_Copycenter.Forms
             // 
             this.button8.Location = new System.Drawing.Point(789, 268);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(84, 80);
+            this.button8.Size = new System.Drawing.Size(84, 35);
             this.button8.TabIndex = 21;
             this.button8.Text = "Добавить";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(772, 149);
+            this.button7.Location = new System.Drawing.Point(772, 194);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 80);
+            this.button7.Size = new System.Drawing.Size(84, 35);
             this.button7.TabIndex = 20;
             this.button7.Text = "Удалить";
             this.button7.UseVisualStyleBackColor = true;
@@ -407,7 +392,7 @@ namespace DB_Copycenter.Forms
             // 
             this.button6.Location = new System.Drawing.Point(772, 45);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 80);
+            this.button6.Size = new System.Drawing.Size(84, 35);
             this.button6.TabIndex = 19;
             this.button6.Text = "Добавить";
             this.button6.UseVisualStyleBackColor = true;
@@ -442,11 +427,10 @@ namespace DB_Copycenter.Forms
             this.FilialBranchCountry,
             this.FilialCity,
             this.FilialAddress,
-            this.FilialOpenDate,
-            this.SelectedFilial});
+            this.FilialOpenDate});
             this.dataGridView7.Location = new System.Drawing.Point(6, 268);
             this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(777, 164);
+            this.dataGridView7.Size = new System.Drawing.Size(760, 164);
             this.dataGridView7.TabIndex = 16;
             // 
             // dataGridView5
@@ -587,6 +571,42 @@ namespace DB_Copycenter.Forms
             this.label3.Text = "Пользователь";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(789, 327);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(84, 44);
+            this.button11.TabIndex = 24;
+            this.button11.Text = "Редактировать";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(772, 116);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(84, 44);
+            this.button12.TabIndex = 25;
+            this.button12.Text = "Редактировать";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(490, 116);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(84, 44);
+            this.button13.TabIndex = 26;
+            this.button13.Text = "Редактировать";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(490, 327);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(84, 44);
+            this.button14.TabIndex = 27;
+            this.button14.Text = "Редактировать";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
             // FilialBranchName
             // 
             this.FilialBranchName.HeaderText = "Название сети";
@@ -615,25 +635,6 @@ namespace DB_Copycenter.Forms
             this.FilialOpenDate.Name = "FilialOpenDate";
             this.FilialOpenDate.Width = 120;
             // 
-            // SelectedFilial
-            // 
-            this.SelectedFilial.HeaderText = "";
-            this.SelectedFilial.Name = "SelectedFilial";
-            this.SelectedFilial.Width = 50;
-            // 
-            // dataGridView6
-            // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewCheckBoxColumn1});
-            this.dataGridView6.Location = new System.Drawing.Point(292, 45);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(474, 184);
-            this.dataGridView6.TabIndex = 23;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Должность";
@@ -650,22 +651,33 @@ namespace DB_Copycenter.Forms
             this.dataGridViewTextBoxColumn3.HeaderText = "Зарплата";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewCheckBoxColumn1
+            // ClientSelfDataAdmin
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 50;
+            this.ClientSelfDataAdmin.HeaderText = "Личные данные";
+            this.ClientSelfDataAdmin.Name = "ClientSelfDataAdmin";
+            this.ClientSelfDataAdmin.Width = 200;
             // 
-            // button10
+            // ClientCashData
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(580, 19);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 74);
-            this.button10.TabIndex = 20;
-            this.button10.UseVisualStyleBackColor = true;
+            this.ClientCashData.HeaderText = "Личный счёт";
+            this.ClientCashData.Name = "ClientCashData";
+            this.ClientCashData.Width = 150;
+            // 
+            // WorkerPositionAdmin
+            // 
+            this.WorkerPositionAdmin.HeaderText = "Должность";
+            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
+            this.WorkerPositionAdmin.Width = 150;
+            // 
+            // WorkerWorkExperienceAdmin
+            // 
+            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
+            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
+            // 
+            // WorkerSalaryAdmin
+            // 
+            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
+            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
             // 
             // WorkerForm
             // 
@@ -687,10 +699,10 @@ namespace DB_Copycenter.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -724,17 +736,10 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientSelfDataAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientCashData;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectedClientAdmin;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerPositionAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerWorkExperienceAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerSalaryAdmin;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectedWorkerAdmin;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientSelfDataDirector;
         private System.Windows.Forms.Label label12;
@@ -745,17 +750,24 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.DataGridViewComboBoxColumn FilialBranchName;
         private System.Windows.Forms.DataGridViewComboBoxColumn FilialBranchCountry;
         private System.Windows.Forms.DataGridViewComboBoxColumn FilialCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilialAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilialOpenDate;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectedFilial;
-        private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerPositionAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerWorkExperienceAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerSalaryAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientSelfDataAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientCashData;
     }
 }
