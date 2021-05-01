@@ -32,9 +32,9 @@ namespace DB_Copycenter
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.confirmPassTextBox = new System.Windows.Forms.TextBox();
-            this.registerButton = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.nameSurnameTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginTextBox
@@ -66,15 +66,16 @@ namespace DB_Copycenter
             this.confirmPassTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirmPassTextBox.UseSystemPasswordChar = true;
             // 
-            // registerButton
+            // RegisterButton
             // 
-            this.registerButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.registerButton.Location = new System.Drawing.Point(147, 217);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(100, 53);
-            this.registerButton.TabIndex = 3;
-            this.registerButton.Text = "REGISTER";
-            this.registerButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegisterButton.Location = new System.Drawing.Point(147, 217);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(100, 53);
+            this.RegisterButton.TabIndex = 3;
+            this.RegisterButton.Text = "REGISTER";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // nameSurnameTextBox
             // 
@@ -85,15 +86,16 @@ namespace DB_Copycenter
             this.nameSurnameTextBox.Text = "Enter Name and Surname";
             this.nameSurnameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // BackButton
             // 
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(147, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 53);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "BACK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BackButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackButton.Location = new System.Drawing.Point(147, 285);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(100, 53);
+            this.BackButton.TabIndex = 5;
+            this.BackButton.Text = "BACK";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // RegistrationForm
             // 
@@ -101,9 +103,9 @@ namespace DB_Copycenter
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(394, 411);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.nameSurnameTextBox);
-            this.Controls.Add(this.registerButton);
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.confirmPassTextBox);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
@@ -119,8 +121,8 @@ namespace DB_Copycenter
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox confirmPassTextBox;
-        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.TextBox nameSurnameTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BackButton;
     }
 }

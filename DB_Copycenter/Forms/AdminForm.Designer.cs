@@ -31,21 +31,16 @@ namespace DB_Copycenter.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ClientSelfDataAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientCashData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ReportDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportConsumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button11 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -56,21 +51,26 @@ namespace DB_Copycenter.Forms
             this.FilialCity = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.FilialAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilialOpenDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ReportDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportConsumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ClientSelfDataAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientCashData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,132 +104,88 @@ namespace DB_Copycenter.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Panel";
             // 
-            // button13
+            // button7
             // 
-            this.button13.Location = new System.Drawing.Point(490, 116);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(84, 44);
-            this.button13.TabIndex = 31;
-            this.button13.Text = "Редактировать";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(611, 766);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 65);
+            this.button7.TabIndex = 47;
+            this.button7.Text = "Удалить отчёт";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button6
             // 
-            this.button3.Location = new System.Drawing.Point(490, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 35);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button6.Location = new System.Drawing.Point(611, 644);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(126, 65);
+            this.button6.TabIndex = 46;
+            this.button6.Text = "Редактировать отчёт";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button10
             // 
-            this.button2.Location = new System.Drawing.Point(490, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 35);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(1279, 16);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 74);
+            this.button10.TabIndex = 45;
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // label1
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClientSelfDataAdmin,
-            this.ClientCashData});
-            this.dataGridView3.Location = new System.Drawing.Point(10, 45);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(452, 184);
-            this.dataGridView3.TabIndex = 28;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(24, 484);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 23);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Отчёт";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ClientSelfDataAdmin
+            // button1
             // 
-            this.ClientSelfDataAdmin.HeaderText = "Личные данные";
-            this.ClientSelfDataAdmin.Name = "ClientSelfDataAdmin";
-            this.ClientSelfDataAdmin.Width = 200;
+            this.button1.Location = new System.Drawing.Point(611, 510);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 65);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Составить отчёт";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // ClientCashData
+            // dataGridView1
             // 
-            this.ClientCashData.HeaderText = "Личный счёт";
-            this.ClientCashData.Name = "ClientCashData";
-            this.ClientCashData.Width = 150;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ReportDescription,
+            this.ReportDate,
+            this.ReportIncome,
+            this.ReportConsumption});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 510);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(595, 321);
+            this.dataGridView1.TabIndex = 42;
             // 
-            // label10
+            // ReportDescription
             // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(6, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(168, 23);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Список клиентов";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReportDescription.HeaderText = "Описание";
+            this.ReportDescription.Name = "ReportDescription";
+            this.ReportDescription.Width = 200;
             // 
-            // button14
+            // ReportDate
             // 
-            this.button14.Location = new System.Drawing.Point(1121, 124);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(84, 44);
-            this.button14.TabIndex = 36;
-            this.button14.Text = "Редактировать";
-            this.button14.UseVisualStyleBackColor = true;
+            this.ReportDate.HeaderText = "Дата создания";
+            this.ReportDate.Name = "ReportDate";
             // 
-            // button5
+            // ReportIncome
             // 
-            this.button5.Location = new System.Drawing.Point(1121, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 35);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "Удалить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ReportIncome.HeaderText = "Доход";
+            this.ReportIncome.Name = "ReportIncome";
             // 
-            // button4
+            // ReportConsumption
             // 
-            this.button4.Location = new System.Drawing.Point(1121, 55);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 35);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.WorkerPositionAdmin,
-            this.WorkerWorkExperienceAdmin,
-            this.WorkerSalaryAdmin});
-            this.dataGridView4.Location = new System.Drawing.Point(641, 55);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(452, 174);
-            this.dataGridView4.TabIndex = 33;
-            // 
-            // WorkerPositionAdmin
-            // 
-            this.WorkerPositionAdmin.HeaderText = "Должность";
-            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
-            this.WorkerPositionAdmin.Width = 150;
-            // 
-            // WorkerWorkExperienceAdmin
-            // 
-            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
-            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
-            // 
-            // WorkerSalaryAdmin
-            // 
-            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
-            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(637, 29);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 23);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Список работников";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReportConsumption.HeaderText = "Расходы";
+            this.ReportConsumption.Name = "ReportConsumption";
             // 
             // button11
             // 
@@ -311,88 +267,132 @@ namespace DB_Copycenter.Forms
             this.FilialOpenDate.Name = "FilialOpenDate";
             this.FilialOpenDate.Width = 120;
             // 
-            // button1
+            // button14
             // 
-            this.button1.Location = new System.Drawing.Point(611, 510);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 65);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Составить отчёт";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button14.Location = new System.Drawing.Point(1121, 124);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(84, 44);
+            this.button14.TabIndex = 36;
+            this.button14.Text = "Редактировать";
+            this.button14.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // button5
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ReportDescription,
-            this.ReportDate,
-            this.ReportIncome,
-            this.ReportConsumption});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 510);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 321);
-            this.dataGridView1.TabIndex = 42;
+            this.button5.Location = new System.Drawing.Point(1121, 196);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 35);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "Удалить";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // ReportDescription
+            // button4
             // 
-            this.ReportDescription.HeaderText = "Описание";
-            this.ReportDescription.Name = "ReportDescription";
-            this.ReportDescription.Width = 200;
+            this.button4.Location = new System.Drawing.Point(1121, 55);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 35);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Добавить";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // ReportDate
+            // dataGridView4
             // 
-            this.ReportDate.HeaderText = "Дата создания";
-            this.ReportDate.Name = "ReportDate";
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.WorkerPositionAdmin,
+            this.WorkerWorkExperienceAdmin,
+            this.WorkerSalaryAdmin});
+            this.dataGridView4.Location = new System.Drawing.Point(641, 55);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(452, 174);
+            this.dataGridView4.TabIndex = 33;
             // 
-            // ReportIncome
+            // WorkerPositionAdmin
             // 
-            this.ReportIncome.HeaderText = "Доход";
-            this.ReportIncome.Name = "ReportIncome";
+            this.WorkerPositionAdmin.HeaderText = "Должность";
+            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
+            this.WorkerPositionAdmin.Width = 150;
             // 
-            // ReportConsumption
+            // WorkerWorkExperienceAdmin
             // 
-            this.ReportConsumption.HeaderText = "Расходы";
-            this.ReportConsumption.Name = "ReportConsumption";
+            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
+            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
             // 
-            // label1
+            // WorkerSalaryAdmin
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(24, 484);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 23);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Отчёт";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
+            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
             // 
-            // button10
+            // label11
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(1279, 16);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 74);
-            this.button10.TabIndex = 45;
-            this.button10.UseVisualStyleBackColor = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(637, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(168, 23);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Список работников";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button6
+            // button13
             // 
-            this.button6.Location = new System.Drawing.Point(611, 644);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 65);
-            this.button6.TabIndex = 46;
-            this.button6.Text = "Редактировать отчёт";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button13.Location = new System.Drawing.Point(490, 116);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(84, 44);
+            this.button13.TabIndex = 31;
+            this.button13.Text = "Редактировать";
+            this.button13.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button3
             // 
-            this.button7.Location = new System.Drawing.Point(611, 766);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 65);
-            this.button7.TabIndex = 47;
-            this.button7.Text = "Удалить отчёт";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(490, 194);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(84, 35);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(490, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 35);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientSelfDataAdmin,
+            this.ClientCashData});
+            this.dataGridView3.Location = new System.Drawing.Point(10, 45);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(452, 184);
+            this.dataGridView3.TabIndex = 28;
+            // 
+            // ClientSelfDataAdmin
+            // 
+            this.ClientSelfDataAdmin.HeaderText = "Личные данные";
+            this.ClientSelfDataAdmin.Name = "ClientSelfDataAdmin";
+            this.ClientSelfDataAdmin.Width = 200;
+            // 
+            // ClientCashData
+            // 
+            this.ClientCashData.HeaderText = "Личный счёт";
+            this.ClientCashData.Name = "ClientCashData";
+            this.ClientCashData.Width = 150;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(6, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(168, 23);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Список клиентов";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminForm
             // 
@@ -404,12 +404,12 @@ namespace DB_Copycenter.Forms
             this.MaximumSize = new System.Drawing.Size(1400, 900);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Text = "Admin Form";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }

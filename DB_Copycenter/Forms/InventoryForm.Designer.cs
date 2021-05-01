@@ -123,7 +123,7 @@ namespace DB_Copycenter.Forms
             this.MaximumSize = new System.Drawing.Size(700, 400);
             this.MinimumSize = new System.Drawing.Size(700, 400);
             this.Name = "InventoryForm";
-            this.Text = "InventoryForm";
+            this.Text = "Inventory Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
