@@ -87,11 +87,23 @@
     <Compile Include="Core\Database\DBHandler.cs" />
     <Compile Include="Core\Users\User.cs" />
     <Compile Include="Core\Users\Worker.cs" />
+    <Compile Include="Forms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Autorization.Designer.cs">
       <DependentUpon>Autorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookkeeperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookkeeperForm.Designer.cs">
+      <DependentUpon>BookkeeperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientForm.cs">
       <SubType>Form</SubType>
@@ -119,8 +131,14 @@
     <Compile Include="Forms\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookkeeperForm.resx">
+      <DependentUpon>BookkeeperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>

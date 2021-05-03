@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
@@ -60,5 +61,42 @@ namespace DB_Copycenter
                 
             }
         }
+
+        public string GetHash(string password)
+        {
+            var md5 = MD5.Create();
+
+            return Encoding.ASCII.GetString(md5.ComputeHash(Encoding.ASCII.GetBytes(password)));
+        }
+
+        #region Npgsql Methods
+
+        public int InsertUserData(User user)
+        {
+            using (var command = new NpgsqlCommand("INSERT INTO Client (login, password, fio, self_cash) " +
+                "VALUES (@log1, @pas1, @fio1, @cash1) RETURNING id", conn))
+            {
+                command.Parameters.AddWithValue("log1", user.Login);
+                command.Parameters.AddWithValue("pas1", GetHash(user.Password));
+                command.Parameters.AddWithValue("fio1", user.Fio);
+                command.Parameters.AddWithValue("cash1", user.SelfCash);
+
+                var reader = command.ExecuteReader();
+                reader.Read();
+                var id = reader.GetInt32(0);
+                reader.Close();
+
+                return id;
+            }
+        }
+
+        public NpgsqlDataReader SelectFromUsersTable(string login)
+        {
+            var command = new NpgsqlCommand("SELECT * FROM Client WHERE login = '" + login + "'", conn);
+
+            return command.ExecuteReader();
+        }
+
+        #endregion
     }
 }

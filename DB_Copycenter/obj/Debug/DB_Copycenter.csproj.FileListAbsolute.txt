@@ -51,3 +51,5 @@ E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\System.T
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\bin\Debug\System.ValueTuple.xml
 E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.csproj.CopyComplete
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.AdminForm.resources
+E:\VSProjects\Github repositories\DB_Copycenter\DB_Copycenter\obj\Debug\DB_Copycenter.Forms.BookkeeperForm.resources

@@ -12,9 +12,15 @@ namespace DB_Copycenter.Forms
 {
     public partial class WorkerForm : Form
     {
-        public WorkerForm()
+        private Worker _worker;
+
+        public WorkerForm(Worker worker)
         {
             InitializeComponent();
+
+            _worker = worker;
+
+
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DB_Copycenter.Forms
 {
-    public partial class ClientForm : Form
+    public partial class AdminForm : Form
     {
-        public ClientForm(User user)
+        public AdminForm()
         {
             InitializeComponent();
         }

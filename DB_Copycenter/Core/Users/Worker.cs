@@ -3,6 +3,7 @@
     public class Worker : User
     {
         public int WorkerId;
+        public int ClientId;
         public int PositionId;
         public int FilialId;
 
@@ -24,10 +25,11 @@
             Salary = 0;
         }
 
-        public Worker(User user, int workerId, int positionId, int filialId, 
+        public Worker(User user, int workerId, int clientId, int positionId, int filialId, 
             string position, int workExperience, int salary) : base(user)
         {
             this.WorkerId = workerId;
+            this.ClientId = clientId;
             this.PositionId = positionId;
             this.FilialId = filialId;
             this.Position = position;

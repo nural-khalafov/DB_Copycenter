@@ -13,11 +13,14 @@ namespace DB_Copycenter
     public partial class RegistrationForm : Form
     {
         private readonly Autorization _autorizationForm;
+        private User _user;
 
         private string _login;
         private string _fio;
         private string _password;
         private string _passwordConfirm;
+
+        private List<int> m_SubUserIdArray;
 
         public RegistrationForm()
         {
@@ -39,8 +42,12 @@ namespace DB_Copycenter
             }
             else
             {
-                
+                _user = new User(_login, _fio, _password, 1000);
+                _user.Id = DBHandler.GetDatabase().InsertUserData(_user);
+
+                MessageBox.Show("Registration is successful!");
             }
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
