@@ -33,7 +33,7 @@ namespace DB_Copycenter
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.confirmPassTextBox = new System.Windows.Forms.TextBox();
             this.RegisterButton = new System.Windows.Forms.Button();
-            this.nameSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.fioTextBox = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -77,14 +77,14 @@ namespace DB_Copycenter
             this.RegisterButton.UseVisualStyleBackColor = true;
             this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
-            // nameSurnameTextBox
+            // fioTextBox
             // 
-            this.nameSurnameTextBox.Location = new System.Drawing.Point(119, 118);
-            this.nameSurnameTextBox.Name = "nameSurnameTextBox";
-            this.nameSurnameTextBox.Size = new System.Drawing.Size(150, 20);
-            this.nameSurnameTextBox.TabIndex = 4;
-            this.nameSurnameTextBox.Text = "Enter Name and Surname";
-            this.nameSurnameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fioTextBox.Location = new System.Drawing.Point(119, 118);
+            this.fioTextBox.Name = "fioTextBox";
+            this.fioTextBox.Size = new System.Drawing.Size(150, 20);
+            this.fioTextBox.TabIndex = 4;
+            this.fioTextBox.Text = "Enter ФИО";
+            this.fioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BackButton
             // 
@@ -104,7 +104,7 @@ namespace DB_Copycenter
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(394, 411);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.nameSurnameTextBox);
+            this.Controls.Add(this.fioTextBox);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.confirmPassTextBox);
             this.Controls.Add(this.passwordTextBox);
@@ -122,7 +122,7 @@ namespace DB_Copycenter
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox confirmPassTextBox;
         private System.Windows.Forms.Button RegisterButton;
-        private System.Windows.Forms.TextBox nameSurnameTextBox;
+        private System.Windows.Forms.TextBox fioTextBox;
         private System.Windows.Forms.Button BackButton;
     }
 }

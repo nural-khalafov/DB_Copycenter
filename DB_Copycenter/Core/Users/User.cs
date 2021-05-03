@@ -1,21 +1,27 @@
 ﻿namespace DB_Copycenter
 {
-    class User
+    public class User
     {
-        public int id;
-        public string login;
-        public string password;
+        public int Id;
+        public int SelfCash;
+        public string Login;
+        public string Fio;
+        public string Password;
 
-        public User(string login_, string password_)
+        public User(string login, string fio, string password, int selfCash)
         {
-            login = login_;
-            password = password_;
+            this.Login = login;
+            this.Fio = fio;
+            this.Password = password;
+            this.SelfCash = selfCash;
         }
 
         public User(User user)
         {
-            login = user.password;
-            password = user.password;
+            this.Login = user.Login;
+            this.Fio = user.Fio;
+            this.Password = user.Password;
+            this.SelfCash = user.SelfCash;
         }
     }
 }

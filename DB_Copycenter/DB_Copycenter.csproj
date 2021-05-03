@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Database\Database.cs" />
-    <Compile Include="Core\Users\Client.cs" />
+    <Compile Include="Core\Database\DBHandler.cs" />
     <Compile Include="Core\Users\User.cs" />
     <Compile Include="Core\Users\Worker.cs" />
     <Compile Include="Forms\Autorization.cs">
@@ -143,7 +143,6 @@
     <EmbeddedResource Include="Forms\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="JSON\ExampleFile.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -23,7 +23,6 @@ namespace DB_Copycenter
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

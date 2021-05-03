@@ -12,10 +12,10 @@ namespace DB_Copycenter
 {
     public partial class RegistrationForm : Form
     {
-        private Autorization autorizationForm;
+        private readonly Autorization _autorizationForm;
 
         private string _login;
-        private string _nameAndSurname;
+        private string _fio;
         private string _password;
         private string _passwordConfirm;
 
@@ -23,19 +23,18 @@ namespace DB_Copycenter
         {
             InitializeComponent();
 
-            autorizationForm = new Autorization();
+            _autorizationForm = new Autorization();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             _login = loginTextBox.Text;
-            _nameAndSurname = nameSurnameTextBox.Text;
+            _fio = fioTextBox.Text;
             _password = passwordTextBox.Text;
             _passwordConfirm = confirmPassTextBox.Text;
 
             if (_password != _passwordConfirm)
             {
-                //throw new ArgumentNullException("Password is Incorrect");
                 MessageBox.Show("Password is Incorrect");
             }
             else
@@ -46,7 +45,7 @@ namespace DB_Copycenter
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            autorizationForm.Show();
+            _autorizationForm.Show();
             this.Close();
         }
     }

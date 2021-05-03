@@ -11,7 +11,8 @@ namespace DB_Copycenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WorkerForm());
+            Application.Run(new Autorization());
+
         }
     }
 }
