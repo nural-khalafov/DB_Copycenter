@@ -33,10 +33,12 @@ namespace DB_Copycenter.Forms
             this.OrderButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.PaymentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,8 @@ namespace DB_Copycenter.Forms
             this.PaymentNumber,
             this.ClientFIO,
             this.ServiceName,
-            this.PaymentSum});
+            this.PaymentSum,
+            this.ServiceStatus});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(737, 337);
@@ -67,12 +70,22 @@ namespace DB_Copycenter.Forms
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(772, 199);
+            this.button1.Location = new System.Drawing.Point(772, 254);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
+            this.button1.Size = new System.Drawing.Size(150, 95);
             this.button1.TabIndex = 24;
             this.button1.Text = "ПОДТВЕРДИТЬ ЗАКАЗ";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(772, 168);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 80);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "КЛИЕНТ С УЛИЦЫ";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // PaymentNumber
             // 
@@ -100,7 +113,13 @@ namespace DB_Copycenter.Forms
             this.PaymentSum.HeaderText = "Сумма Платежа";
             this.PaymentSum.Name = "PaymentSum";
             this.PaymentSum.ReadOnly = true;
-            this.PaymentSum.Width = 150;
+            this.PaymentSum.Width = 75;
+            // 
+            // ServiceStatus
+            // 
+            this.ServiceStatus.HeaderText = "Состояние Заказа";
+            this.ServiceStatus.Name = "ServiceStatus";
+            this.ServiceStatus.ReadOnly = true;
             // 
             // OrderForm
             // 
@@ -108,6 +127,7 @@ namespace DB_Copycenter.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(934, 361);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.OrderButton);
@@ -125,9 +145,11 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Button OrderButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientFIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentSum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceStatus;
     }
 }
