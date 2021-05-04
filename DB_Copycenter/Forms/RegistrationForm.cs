@@ -20,8 +20,6 @@ namespace DB_Copycenter
         private string _password;
         private string _passwordConfirm;
 
-        private List<int> m_SubUserIdArray;
-
         public RegistrationForm()
         {
             InitializeComponent();

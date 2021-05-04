@@ -69,7 +69,7 @@ namespace DB_Copycenter
             return Encoding.ASCII.GetString(md5.ComputeHash(Encoding.ASCII.GetBytes(password)));
         }
 
-        #region Npgsql Methods
+        #region Npgsql INSERT Methods
 
         public int InsertUserData(User user)
         {
@@ -90,9 +90,20 @@ namespace DB_Copycenter
             }
         }
 
+        #endregion
+
+        #region Npgsql SELECT Methods
+
         public NpgsqlDataReader SelectFromUsersTable(string login)
         {
             var command = new NpgsqlCommand("SELECT * FROM Client WHERE login = '" + login + "'", conn);
+
+            return command.ExecuteReader();
+        }
+
+        public NpgsqlDataReader SelectFromServiceTable(string name)
+        {
+            var command = new NpgsqlCommand("SELECT * FROM Service WHERE id = '" + name + "'", conn);
 
             return command.ExecuteReader();
         }
