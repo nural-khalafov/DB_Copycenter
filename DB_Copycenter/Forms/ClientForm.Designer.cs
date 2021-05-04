@@ -29,15 +29,17 @@ namespace DB_Copycenter.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ServicePriceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AddServiceButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RemoveServiceButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.ServiceComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,8 +48,6 @@ namespace DB_Copycenter.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.SelfCashLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,7 +59,7 @@ namespace DB_Copycenter.Forms
             this.groupBox1.Controls.Add(this.ServicePriceLabel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.AddServiceButton);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.RemoveServiceButton);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.DataGridView1);
             this.groupBox1.Controls.Add(this.label1);
@@ -103,15 +103,16 @@ namespace DB_Copycenter.Forms
             this.AddServiceButton.UseVisualStyleBackColor = true;
             this.AddServiceButton.Click += new System.EventHandler(this.AddServiceButton_Click);
             // 
-            // button2
+            // RemoveServiceButton
             // 
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(468, 94);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 60);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "УБРАТЬ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RemoveServiceButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveServiceButton.Location = new System.Drawing.Point(468, 94);
+            this.RemoveServiceButton.Name = "RemoveServiceButton";
+            this.RemoveServiceButton.Size = new System.Drawing.Size(125, 60);
+            this.RemoveServiceButton.TabIndex = 4;
+            this.RemoveServiceButton.Text = "УБРАТЬ";
+            this.RemoveServiceButton.UseVisualStyleBackColor = true;
+            this.RemoveServiceButton.Click += new System.EventHandler(this.RemoveServiceButton_Click);
             // 
             // button1
             // 
@@ -134,6 +135,23 @@ namespace DB_Copycenter.Forms
             this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView1.Size = new System.Drawing.Size(456, 281);
             this.DataGridView1.TabIndex = 2;
+            // 
+            // ServiceName
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ServiceName.HeaderText = "Название услуги";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ServiceName.Width = 250;
+            // 
+            // ServicePrice
+            // 
+            this.ServicePrice.HeaderText = "Цена услуги";
+            this.ServicePrice.Name = "ServicePrice";
+            this.ServicePrice.ReadOnly = true;
+            this.ServicePrice.Width = 125;
             // 
             // label1
             // 
@@ -229,23 +247,6 @@ namespace DB_Copycenter.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Клиент";
             // 
-            // ServiceName
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ServiceName.HeaderText = "Название услуги";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ServiceName.Width = 250;
-            // 
-            // ServicePrice
-            // 
-            this.ServicePrice.HeaderText = "Цена услуги";
-            this.ServicePrice.Name = "ServicePrice";
-            this.ServicePrice.ReadOnly = true;
-            this.ServicePrice.Width = 125;
-            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,7 +281,7 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Label SelfCashLabel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button AddServiceButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RemoveServiceButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ServicePriceLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;

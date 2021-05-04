@@ -85,7 +85,17 @@
   <ItemGroup>
     <Compile Include="Core\Database\Database.cs" />
     <Compile Include="Core\Database\DBHandler.cs" />
+    <Compile Include="Core\Interfaces\ILoginService.cs" />
+    <Compile Include="Core\Interfaces\IPresenter.cs" />
+    <Compile Include="Core\Interfaces\IView.cs" />
+    <Compile Include="Core\MVP\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\MVP\LoginPresenter.cs" />
+    <Compile Include="Core\MVP\LoginService.cs" />
     <Compile Include="Core\Service\Service.cs" />
+    <Compile Include="Core\Users\Admin.cs" />
+    <Compile Include="Core\Users\Bookkeeper.cs" />
     <Compile Include="Core\Users\User.cs" />
     <Compile Include="Core\Users\Worker.cs" />
     <Compile Include="Forms\AdminForm.cs">

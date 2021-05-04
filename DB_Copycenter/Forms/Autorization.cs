@@ -23,7 +23,6 @@ namespace DB_Copycenter
         public Autorization()
         {
             InitializeComponent();
-
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

@@ -64,5 +64,22 @@ namespace DB_Copycenter.Forms
 
             DataGridView1.Rows.Add(dataGridViewRow);
         }
+
+        private void RemoveServiceButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.DataGridView1.SelectedRows)
+            {
+
+                try
+                {
+                    DataGridView1.Rows.RemoveAt(item.Index);
+                }
+                catch
+                {
+                    MessageBox.Show("Невозможно удалить пустую строку");
+                }
+
+            }
+        }
     }
 }
