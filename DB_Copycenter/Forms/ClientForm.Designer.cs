@@ -29,14 +29,14 @@ namespace DB_Copycenter.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ServicePriceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AddServiceButton = new System.Windows.Forms.Button();
             this.RemoveServiceButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.GetServiceButton = new System.Windows.Forms.Button();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@ namespace DB_Copycenter.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.AddServiceButton);
             this.groupBox1.Controls.Add(this.RemoveServiceButton);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.GetServiceButton);
             this.groupBox1.Controls.Add(this.DataGridView1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ServiceComboBox);
@@ -114,15 +114,16 @@ namespace DB_Copycenter.Forms
             this.RemoveServiceButton.UseVisualStyleBackColor = true;
             this.RemoveServiceButton.Click += new System.EventHandler(this.RemoveServiceButton_Click);
             // 
-            // button1
+            // GetServiceButton
             // 
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(468, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 60);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ПРИОБРЕСТИ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.GetServiceButton.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GetServiceButton.Location = new System.Drawing.Point(468, 301);
+            this.GetServiceButton.Name = "GetServiceButton";
+            this.GetServiceButton.Size = new System.Drawing.Size(125, 60);
+            this.GetServiceButton.TabIndex = 3;
+            this.GetServiceButton.Text = "ПРИОБРЕСТИ";
+            this.GetServiceButton.UseVisualStyleBackColor = true;
+            this.GetServiceButton.Click += new System.EventHandler(this.GetServiceButton_Click);
             // 
             // DataGridView1
             // 
@@ -138,8 +139,8 @@ namespace DB_Copycenter.Forms
             // 
             // ServiceName
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ServiceName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ServiceName.HeaderText = "Название услуги";
             this.ServiceName.Name = "ServiceName";
             this.ServiceName.ReadOnly = true;
@@ -273,7 +274,7 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ServiceComboBox;
         private System.Windows.Forms.DataGridView DataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button GetServiceButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label FioLabel;
         private System.Windows.Forms.Label label3;

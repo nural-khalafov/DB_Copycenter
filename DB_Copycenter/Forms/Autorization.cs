@@ -15,10 +15,12 @@ namespace DB_Copycenter
     public partial class Autorization : Form
     {
         private User _user;
-        
+        private Worker _worker;
+
         private string _login;
         private string _password;
         private string _passwordHashed;
+        private bool _isLoginExists = false;
 
         public Autorization()
         {
@@ -38,43 +40,66 @@ namespace DB_Copycenter
 
             if (reader.IsOnRow)
             {
+                _isLoginExists = true;
                 _user = new User(reader.GetString(1), reader.GetString(3), reader.GetString(2), reader.GetInt32(4));
                 _user.Id = reader.GetInt32(0);
                 reader.Close();
 
                 if (_passwordHashed == _user.Password)
                 {
-                    reader = DBHandler.GetDatabase().SelectFromUsersTable(_user.Login);
+                    //reader = DBHandler.GetDatabase().SelectFromUsersTable(_user.Login);
+                    reader = DBHandler.GetDatabase().SelectFromWorkerTable(_user.Login);
                     reader.Read();
-
                     if (reader.IsOnRow)
                     {
-                        var client = new User(reader.GetString(1),reader.GetString(3), reader.GetString(2), reader.GetInt32(4));
-                        reader.Close();
+                        var worker = new Worker(_user, reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4),
+                            reader.GetString(7), reader.GetInt32(5), reader.GetInt32(8));
+                        if (_worker.Position == "Администратор")
+                        {
+                            
+                            var adminForm = new AdminForm(worker);
+                            reader.Close();
 
-                        var clientForm = new ClientForm(client);
+                            adminForm.Show();
+                            Hide();
 
-                        clientForm.Show();
-                        Hide();
-
-                        MessageBox.Show("You logged in as Client!");
-                        //if ("Admin")
-                        //{
-                        //    var Worker = new Worker(_user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
-                        //        reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6));
-                        //    reader.Close();
-                        //
-                        //    var workerForm = new WorkerForm(Worker);
-                        //}
+                            MessageBox.Show("You logged in as Admin");
+                        }
                     }
+                    
+                    var client = new User(reader.GetString(1), reader.GetString(3), reader.GetString(2), reader.GetInt32(4));
+                    reader.Close();
+
+                    var clientForm = new ClientForm(client);
+
+                    clientForm.Show();
+                    Hide();
+
+                    MessageBox.Show("You logged in as Client!");
                 }
                 else
                 {
                     MessageBox.Show("Password is Invalid. Please, try again...");
                 }
-                reader.Close();
             }
             else
+            {
+                _isLoginExists = true;
+                reader.Read();
+
+                if (reader.IsOnRow)
+                {
+                    //else if ()
+                    //{
+
+                    //}
+                    //else if ()
+                    //{
+
+                    //}
+                }
+            }
+            if (!_isLoginExists)
             {
                 reader.Close();
                 var regForm = new RegistrationForm();

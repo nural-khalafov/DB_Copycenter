@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Core\Database\Database.cs" />
     <Compile Include="Core\Database\DBHandler.cs" />
+    <Compile Include="Core\Utility\Time.cs" />
     <Compile Include="Core\Interfaces\ILoginService.cs" />
     <Compile Include="Core\Interfaces\IPresenter.cs" />
     <Compile Include="Core\Interfaces\IView.cs" />
@@ -172,6 +173,7 @@
     <EmbeddedResource Include="Forms\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Diagrams\ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Images\" />
-    <Folder Include="Diagrams\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

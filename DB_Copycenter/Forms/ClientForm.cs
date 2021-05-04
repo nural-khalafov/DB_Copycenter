@@ -69,7 +69,6 @@ namespace DB_Copycenter.Forms
         {
             foreach (DataGridViewRow item in this.DataGridView1.SelectedRows)
             {
-
                 try
                 {
                     DataGridView1.Rows.RemoveAt(item.Index);
@@ -78,8 +77,12 @@ namespace DB_Copycenter.Forms
                 {
                     MessageBox.Show("Невозможно удалить пустую строку");
                 }
-
             }
+        }
+
+        private void GetServiceButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

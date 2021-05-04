@@ -12,9 +12,12 @@ namespace DB_Copycenter.Forms
 {
     public partial class BookkeeperForm : Form
     {
-        public BookkeeperForm()
+        private Worker _bookkeeper;
+        public BookkeeperForm(Worker bookkeper)
         {
             InitializeComponent();
+
+            _bookkeeper = bookkeper;
         }
     }
 }

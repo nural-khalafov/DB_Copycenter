@@ -12,9 +12,12 @@ namespace DB_Copycenter.Forms
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private Worker _admin;
+        public AdminForm(Worker admin)
         {
             InitializeComponent();
+
+            _admin = admin;
         }
     }
 }

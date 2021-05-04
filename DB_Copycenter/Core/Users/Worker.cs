@@ -6,7 +6,6 @@
         public int ClientId;
         public int PositionId;
         public int FilialId;
-
         public int WorkExperience;
         public int Salary;
 

@@ -12,6 +12,7 @@
 
         public string Position;
 
+
         public Admin(string login, string fio, string password,
             int selfCash, int adminId, int positionId, int filialId, string position) : base(login, fio, password, selfCash)
         {

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DB_Copycenter.Database" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACADQAAEAAQgEEAAAAAAigBACAQAiBEWAAAAIwAEAAA=</HashCode>
+      <FileName>Core\Database\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.DBHandler" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Database\DBHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.LoginForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAQAAkAAAAAEAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Core\MVP\LoginForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DB_Copycenter.LoginPresenter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACAQAAAAAAI=</HashCode>
+      <FileName>Core\MVP\LoginPresenter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DB_Copycenter.LoginService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Core\MVP\LoginService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DB_Copycenter.Service" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAA=</HashCode>
+      <FileName>Core\Service\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Admin" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAMQAAAAAggAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Users\Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Bookkeeper" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAgIQAAAAAggAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Users\Bookkeeper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.User" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAACAAAAAAEAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Core\Users\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Worker" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAIQAAAAAggAAAAAAAAACAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Core\Users\Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Time" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Core\Utility\Time.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Autorization" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAEAAACAAAAAAACCAAAAiAAQAAYAAAACAIAAAgAA=</HashCode>
+      <FileName>Forms\Autorization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.RegistrationForm" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACAAAAQBACCBAAAiAAAAAYAQAAAQICBAAAA=</HashCode>
+      <FileName>Forms\RegistrationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Program" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Forms.AdminForm" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAIAACAAQCAAAFAAAACAAYACAOgwAQIAACAAQABAAAA=</HashCode>
+      <FileName>Forms\AdminForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Forms.BookkeeperForm" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAKAQAAACAgAFAAAACAAAACAAAIAAAAACAAAABAAAA=</HashCode>
+      <FileName>Forms\BookkeeperForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Forms.ClientForm" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIBCAAACYAABAAIACAIAACAAAAAABJAHAEJIJABgA=</HashCode>
+      <FileName>Forms\ClientForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Forms.OrderForm" Collapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAABCAKAAKAQgYAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Forms\OrderForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Forms.WorkerForm" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAFAAQACACAACAQAAAAAAACAAAABAgAA=</HashCode>
+      <FileName>Forms\WorkerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Properties.Resources" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Copycenter.Properties.Settings" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DB_Copycenter.ILoginService" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\ILoginService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DB_Copycenter.IPresenter" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Core\Interfaces\IPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DB_Copycenter.IView" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Core\Interfaces\IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DB_Copycenter.ILoginView" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAQAAkAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Core\Interfaces\IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
