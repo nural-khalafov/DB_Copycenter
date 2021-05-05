@@ -54,6 +54,7 @@ namespace DB_Copycenter
                     if (reader.Read())
                     {
                         worker = new Worker(user, reader.GetString(0));
+                        reader.Close();
                         switch (worker.Position)
                         {
                             case "Администратор":
@@ -68,7 +69,7 @@ namespace DB_Copycenter
                                 Hide();
 
                                 MessageBox.Show("You logged in as Admin");
-                                break;
+                                return;
                             case "Бухгалтер":
                                 reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
                                 reader.Read();
@@ -82,7 +83,7 @@ namespace DB_Copycenter
 
                                 MessageBox.Show("You logged in as Bookkeeper");
 
-                                break;
+                                return;
                             case "Работник":
                                 reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
                                 reader.Read();
@@ -96,7 +97,7 @@ namespace DB_Copycenter
 
                                 MessageBox.Show("You logged in as Worker");
 
-                                break;
+                                return;
                         }
                     }
                     reader.Close();
@@ -112,7 +113,6 @@ namespace DB_Copycenter
 
                 if (_passwordHashed == user.Password)
                 {
-                    
                     if (reader.IsOnRow)
                     {
                         var client = user;

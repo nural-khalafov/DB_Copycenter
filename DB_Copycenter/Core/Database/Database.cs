@@ -2,7 +2,6 @@
 using System.Security.Cryptography;
 using System.Text;
 using Npgsql;
-using NpgsqlTypes;
 
 namespace DB_Copycenter
 {
@@ -101,15 +100,17 @@ namespace DB_Copycenter
         /// Sends a payment to the database
         /// </summary>
         /// <param name="user">Current User</param>
-        public void InsertPayment(User user)
+        public void InsertPaymentData(User user)
         {
             using (var command = new NpgsqlCommand("INSERT INTO Payment (client_id, filial_id, payment_time, payment_status) " + 
                 "VALUES (@cl_id, @fil_id, @pay_time, @pay_status)", conn))
             {
                 command.Parameters.AddWithValue("cl_id", user.Id);
                 command.Parameters.AddWithValue("fil_id", 1);
-                command.Parameters.AddWithValue("pay_time", Time.PaymentTime.ToString("g"));
+                command.Parameters.AddWithValue("pay_time", Time.PaymentTime);
                 command.Parameters.AddWithValue("pay_status", "in process");
+
+                var nRows = command.ExecuteNonQuery();
             }
         }
 
@@ -118,13 +119,15 @@ namespace DB_Copycenter
         /// </summary>
         /// <param name="paymentId">Current payment ID</param>
         /// <param name="service">Current selected service/services</param>
-        public void InsertServicesInPayment(int paymentId, Service service)
+        public void InsertServicesInPaymentData(int paymentId, int serviceId)
         {
             using (var command = new NpgsqlCommand("INSERT INTO ServicesInPayment (payment_id, service_id) " + 
                                                    "VALUES (@pay_id, @serv_id)", conn))
             {
                 command.Parameters.AddWithValue("pay_id", paymentId);
-                command.Parameters.AddWithValue("serv_id", service.ServiceId);
+                command.Parameters.AddWithValue("serv_id", serviceId);
+
+                var nRows = command.ExecuteNonQuery();
             }
         }
 
@@ -144,7 +147,9 @@ namespace DB_Copycenter
                 command.Parameters.AddWithValue("cr_date", Time.ReportTime.ToString("g"));
                 command.Parameters.AddWithValue("inc", income);
                 command.Parameters.AddWithValue("desc", descripton);
-                command.Parameters.AddWithValue("@cost", costs);
+                command.Parameters.AddWithValue("cost", costs);
+
+                var nRows = command.ExecuteNonQuery();
             }
         }
 
@@ -278,6 +283,20 @@ namespace DB_Copycenter
             return command.ExecuteReader();
         }
 
+        public NpgsqlDataReader SelectServiceFromServiceTable()
+        {
+            var command = new NpgsqlCommand("SELECT * FROM Service", conn);
+
+            return command.ExecuteReader();
+        }
+
+        public NpgsqlDataReader SelectCurrentPaymentIdFromPaymentTable()
+        {
+            var command = new NpgsqlCommand("SELECT * FROM Payment", conn);
+
+            return command.ExecuteReader();
+        }
+
         #endregion
 
         #region Npgsql UPDATE Methods
@@ -339,6 +358,13 @@ namespace DB_Copycenter
         {
             var command = new NpgsqlCommand("UPDATE Inventory SET filial_id = 1, " +
                                             "quantitiy = " + quantity + ", name = '" + name + "', cost_per_unit = " + costPerUnit + "", conn);
+
+            command.ExecuteNonQuery();
+        }
+
+        public void UpdateClientCashData(int serviceCost, int clientId)
+        {
+            var command = new NpgsqlCommand("UPDATE Client SET self_cash = self_cash - " + serviceCost + " WHERE id = " + clientId, conn);
 
             command.ExecuteNonQuery();
         }

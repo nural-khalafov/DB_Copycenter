@@ -154,12 +154,12 @@ namespace DB_Copycenter.Forms
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(18, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(720, 437);
+            this.groupBox2.Size = new System.Drawing.Size(726, 437);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Окно пользователя";
+            this.groupBox2.Text = "Окно Работника";
             // 
             // WorkExperienceLabel
             // 

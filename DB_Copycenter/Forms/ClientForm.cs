@@ -6,17 +6,15 @@ namespace DB_Copycenter.Forms
 {
     public partial class ClientForm : Form
     {
-        private User client;
-        private Service service;
+        private readonly User client;
+        private Service _service;
 
-        private int _clientSelfCash;
-
-        private string _login;
-        private string _clientFIO;
-        private string ServiceType;
+        private int _selectedId;
+        private int _selectedCost;
+        private int _paymentId;
 
         private List<Service> services;
-        
+
 
         public ClientForm(User client_)
         {
@@ -50,19 +48,28 @@ namespace DB_Copycenter.Forms
 
         private void serviceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            service = (Service)ServiceComboBox.SelectedItem;
-            ServicePriceLabel.Text = Convert.ToString(service.ServiceCost + " $");
+            _service = (Service)ServiceComboBox.SelectedItem;
+            ServicePriceLabel.Text = Convert.ToString(_service.ServiceCost + " $");
         }
 
         private void AddServiceButton_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dataGridViewRow = new DataGridViewRow();
-            dataGridViewRow.CreateCells(DataGridView1);
+            if (ServiceComboBox.SelectedItem != null && _service != null)
+            {
+                DataGridViewRow dataGridViewRow = new DataGridViewRow();
 
-            dataGridViewRow.Cells[0].Value = service.ServiceName;
-            dataGridViewRow.Cells[1].Value = service.ServiceCost;
+                dataGridViewRow.CreateCells(DataGridView1);
 
-            DataGridView1.Rows.Add(dataGridViewRow);
+                dataGridViewRow.Cells[0].Value = _service.ServiceId;
+                dataGridViewRow.Cells[1].Value = _service.ServiceName;
+                dataGridViewRow.Cells[2].Value = _service.ServiceCost;
+
+                DataGridView1.Rows.Add(dataGridViewRow);
+            }
+            else
+            {
+                MessageBox.Show("Невозможно выбрать пустую услугу!");
+            }
         }
 
         private void RemoveServiceButton_Click(object sender, EventArgs e)
@@ -75,12 +82,40 @@ namespace DB_Copycenter.Forms
                 }
                 catch
                 {
-                    MessageBox.Show("Невозможно удалить пустую строку");
+                    MessageBox.Show("Невозможно удалить пустую услугу!");
                 }
             }
         }
 
         private void GetServiceButton_Click(object sender, EventArgs e)
+        {
+            DBHandler.GetDatabase().InsertPaymentData(client);
+            var reader = DBHandler.GetDatabase().SelectCurrentPaymentIdFromPaymentTable();
+            reader.Read();
+            _paymentId = reader.GetInt32(0);
+            reader.Close();
+            DBHandler.GetDatabase().InsertServicesInPaymentData(_paymentId, _selectedId);
+            DBHandler.GetDatabase().UpdateClientCashData(_selectedCost, client.Id);
+            MessageBox.Show("Ваше время оплаты: " + Time.PaymentTime.ToString("g"));
+        }
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                string? selectedId = DataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                string selectedCost = DataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                _selectedCost = Convert.ToInt32(selectedCost);
+                _selectedId = Convert.ToInt32(selectedId);
+            }
+            else
+            {
+                MessageBox.Show("Невозможно выбрать пустую услугу!");
+            }
+
+        }
+
+        private void SelfCashLabel_Click(object sender, EventArgs e)
         {
 
         }

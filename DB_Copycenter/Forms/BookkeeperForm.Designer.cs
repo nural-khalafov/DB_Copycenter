@@ -41,13 +41,14 @@ namespace DB_Copycenter.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ReportDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportConsumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SendReportButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -71,7 +72,7 @@ namespace DB_Copycenter.Forms
             this.groupBox2.Size = new System.Drawing.Size(811, 438);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Окно пользователя";
+            this.groupBox2.Text = "Окно Бухгалтера";
             // 
             // WorkExperienceLabel
             // 
@@ -180,9 +181,10 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.RefreshButton);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.dataGridView);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.SendReportButton);
             this.groupBox3.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.Location = new System.Drawing.Point(829, 12);
             this.groupBox3.Name = "groupBox3";
@@ -190,6 +192,16 @@ namespace DB_Copycenter.Forms
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Панель Бухгалтера";
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(662, 16);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(75, 63);
+            this.RefreshButton.TabIndex = 30;
+            this.RefreshButton.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -236,14 +248,14 @@ namespace DB_Copycenter.Forms
             this.ReportConsumption.HeaderText = "Расходы";
             this.ReportConsumption.Name = "ReportConsumption";
             // 
-            // button1
+            // SendReportButton
             // 
-            this.button1.Location = new System.Drawing.Point(620, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 102);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Составить отчёт";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SendReportButton.Location = new System.Drawing.Point(620, 194);
+            this.SendReportButton.Name = "SendReportButton";
+            this.SendReportButton.Size = new System.Drawing.Size(107, 102);
+            this.SendReportButton.TabIndex = 1;
+            this.SendReportButton.Text = "Составить отчёт";
+            this.SendReportButton.UseVisualStyleBackColor = true;
             // 
             // BookkeeperForm
             // 
@@ -284,6 +296,7 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportIncome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportConsumption;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SendReportButton;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }

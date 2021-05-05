@@ -60,6 +60,9 @@ namespace DB_Copycenter.Forms
 
         private void OrderButton_Click(object sender, EventArgs e)
         {
+            var orderForm = new OrderForm();
+
+            orderForm.Show();
 
         }
     }

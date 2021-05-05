@@ -30,28 +30,19 @@ namespace DB_Copycenter.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
-            this.OrderButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ConfirmButton = new System.Windows.Forms.Button();
+            this.NotClientButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.PaymentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // OrderButton
-            // 
-            this.OrderButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OrderButton.BackgroundImage")));
-            this.OrderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.OrderButton.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OrderButton.Location = new System.Drawing.Point(772, 12);
-            this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(150, 150);
-            this.OrderButton.TabIndex = 22;
-            this.OrderButton.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -62,30 +53,44 @@ namespace DB_Copycenter.Forms
             this.ServiceName,
             this.PaymentSum,
             this.ServiceStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 152);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(737, 337);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 377);
             this.dataGridView1.TabIndex = 23;
             // 
-            // button1
+            // ConfirmButton
             // 
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(772, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 95);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "ПОДТВЕРДИТЬ ЗАКАЗ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ConfirmButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ConfirmButton.BackgroundImage")));
+            this.ConfirmButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ConfirmButton.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ConfirmButton.Location = new System.Drawing.Point(411, 19);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(150, 127);
+            this.ConfirmButton.TabIndex = 24;
+            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
-            // button2
+            // NotClientButton
             // 
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(772, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 80);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "КЛИЕНТ С УЛИЦЫ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.NotClientButton.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NotClientButton.Location = new System.Drawing.Point(119, 19);
+            this.NotClientButton.Name = "NotClientButton";
+            this.NotClientButton.Size = new System.Drawing.Size(181, 127);
+            this.NotClientButton.TabIndex = 25;
+            this.NotClientButton.Text = "КЛИЕНТ С УЛИЦЫ";
+            this.NotClientButton.UseVisualStyleBackColor = true;
+            this.NotClientButton.Click += new System.EventHandler(this.NotClientButton_Click);
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(6, 19);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(51, 57);
+            this.RefreshButton.TabIndex = 30;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // PaymentNumber
             // 
@@ -105,14 +110,12 @@ namespace DB_Copycenter.Forms
             // 
             this.ServiceName.HeaderText = "Название Услуги";
             this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
             this.ServiceName.Width = 150;
             // 
             // PaymentSum
             // 
             this.PaymentSum.HeaderText = "Сумма Платежа";
             this.PaymentSum.Name = "PaymentSum";
-            this.PaymentSum.ReadOnly = true;
             this.PaymentSum.Width = 75;
             // 
             // ServiceStatus
@@ -121,35 +124,46 @@ namespace DB_Copycenter.Forms
             this.ServiceStatus.Name = "ServiceStatus";
             this.ServiceStatus.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RefreshButton);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.ConfirmButton);
+            this.groupBox1.Controls.Add(this.NotClientButton);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(759, 537);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Окно Заказов";
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
-            this.ClientSize = new System.Drawing.Size(934, 361);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.OrderButton);
-            this.MaximumSize = new System.Drawing.Size(950, 400);
-            this.MinimumSize = new System.Drawing.Size(950, 400);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "OrderForm";
             this.Text = "Order Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button OrderButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ConfirmButton;
+        private System.Windows.Forms.Button NotClientButton;
+        private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientFIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentSum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceStatus;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

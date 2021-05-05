@@ -31,6 +31,7 @@ namespace DB_Copycenter.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.InventoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,10 +43,6 @@ namespace DB_Copycenter.Forms
             this.DeleteInventoryButton = new System.Windows.Forms.Button();
             this.AddInventoryButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.WorkerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,7 +55,10 @@ namespace DB_Copycenter.Forms
             this.FioLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.RefreshButton = new System.Windows.Forms.Button();
+            this.WorkerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerWorkExperienceAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkerSalaryAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,6 +86,17 @@ namespace DB_Copycenter.Forms
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Панель Администратора филиала";
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(10, 22);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(75, 63);
+            this.RefreshButton.TabIndex = 28;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // dataGridView
             // 
@@ -184,39 +195,15 @@ namespace DB_Copycenter.Forms
             this.dataGridView1.Size = new System.Drawing.Size(598, 174);
             this.dataGridView1.TabIndex = 15;
             // 
-            // WorkerFIO
-            // 
-            this.WorkerFIO.HeaderText = "ФИО Работника";
-            this.WorkerFIO.Name = "WorkerFIO";
-            this.WorkerFIO.Width = 225;
-            // 
-            // WorkerPositionAdmin
-            // 
-            this.WorkerPositionAdmin.HeaderText = "Должность";
-            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
-            this.WorkerPositionAdmin.ReadOnly = true;
-            this.WorkerPositionAdmin.Width = 125;
-            // 
-            // WorkerWorkExperienceAdmin
-            // 
-            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
-            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
-            this.WorkerWorkExperienceAdmin.Width = 75;
-            // 
-            // WorkerSalaryAdmin
-            // 
-            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
-            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
-            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(6, 232);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 23);
+            this.label11.Size = new System.Drawing.Size(196, 23);
             this.label11.TabIndex = 14;
-            this.label11.Text = "Список работников";
+            this.label11.Text = "Список пользователей";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
@@ -247,7 +234,7 @@ namespace DB_Copycenter.Forms
             this.groupBox2.Size = new System.Drawing.Size(769, 438);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Окно пользователя";
+            this.groupBox2.Text = "Окно Админа";
             // 
             // WorkExperienceLabel
             // 
@@ -354,16 +341,30 @@ namespace DB_Copycenter.Forms
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // RefreshButton
+            // WorkerFIO
             // 
-            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
-            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshButton.Location = new System.Drawing.Point(10, 22);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(75, 63);
-            this.RefreshButton.TabIndex = 28;
-            this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            this.WorkerFIO.HeaderText = "ФИО Пользователя";
+            this.WorkerFIO.Name = "WorkerFIO";
+            this.WorkerFIO.ReadOnly = true;
+            this.WorkerFIO.Width = 225;
+            // 
+            // WorkerPositionAdmin
+            // 
+            this.WorkerPositionAdmin.HeaderText = "Должность";
+            this.WorkerPositionAdmin.Name = "WorkerPositionAdmin";
+            this.WorkerPositionAdmin.ReadOnly = true;
+            this.WorkerPositionAdmin.Width = 125;
+            // 
+            // WorkerWorkExperienceAdmin
+            // 
+            this.WorkerWorkExperienceAdmin.HeaderText = "Стаж работы";
+            this.WorkerWorkExperienceAdmin.Name = "WorkerWorkExperienceAdmin";
+            this.WorkerWorkExperienceAdmin.Width = 75;
+            // 
+            // WorkerSalaryAdmin
+            // 
+            this.WorkerSalaryAdmin.HeaderText = "Зарплата";
+            this.WorkerSalaryAdmin.Name = "WorkerSalaryAdmin";
             // 
             // AdminForm
             // 
@@ -400,10 +401,6 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Button DeleteInventoryButton;
         private System.Windows.Forms.Button AddInventoryButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerFIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerPositionAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerWorkExperienceAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerSalaryAdmin;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -417,5 +414,9 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button RefreshButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerFIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerPositionAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerWorkExperienceAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WorkerSalaryAdmin;
     }
 }
