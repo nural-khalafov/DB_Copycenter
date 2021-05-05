@@ -52,67 +52,57 @@ namespace DB_Copycenter
                     reader = DBHandler.GetDatabase().SelectPositionFromWorkerTable(user.Login);
                     reader.Read();
 
-                    worker = new Worker(user, reader.GetString(0));
-                    reader.Close();
-                    switch (worker.Position)
+                    if (reader.Read())
                     {
-                        case "Администратор":
-                            reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
-                            reader.Read();
-                            worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
-                                reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
-                            reader.Close();
-                            var adminForm = new AdminForm(worker);
+                        worker = new Worker(user, reader.GetString(0));
+                        reader.Close();
+                        switch (worker.Position)
+                        {
+                            case "Администратор":
+                                reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
+                                reader.Read();
+                                worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
+                                    reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
+                                reader.Close();
+                                var adminForm = new AdminForm(worker);
 
-                            adminForm.Show();
-                            Hide();
+                                adminForm.Show();
+                                Hide();
 
-                            MessageBox.Show("You logged in as Admin");
-                            break;
-                        case "Бухгалтер":
-                            reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
-                            reader.Read();
-                            worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
-                                reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
-                            reader.Close();
-                            var bookkeeperForm = new BookkeeperForm(worker);
+                                MessageBox.Show("You logged in as Admin");
+                                break;
+                            case "Бухгалтер":
+                                reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
+                                reader.Read();
+                                worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
+                                    reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
+                                reader.Close();
+                                var bookkeeperForm = new BookkeeperForm(worker);
 
-                            bookkeeperForm.Show();
-                            Hide();
+                                bookkeeperForm.Show();
+                                Hide();
 
-                            MessageBox.Show("You logged in as Bookkeeper");
+                                MessageBox.Show("You logged in as Bookkeeper");
 
-                            break;
-                        case "Работник":
-                            reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
-                            reader.Read();
-                            worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
-                                reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
-                            reader.Close();
-                            var workerForm = new WorkerForm(worker);
+                                break;
+                            case "Работник":
+                                reader = DBHandler.GetDatabase().SelectFromWorkerTable(user.Login);
+                                reader.Read();
+                                worker = new Worker(user, reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3),
+                                    reader.GetString(6), reader.GetInt32(4), reader.GetInt32(7));
+                                reader.Close();
+                                var workerForm = new WorkerForm(worker);
 
-                            workerForm.Show();
-                            Hide();
+                                workerForm.Show();
+                                Hide();
 
-                            MessageBox.Show("You logged in as Worker");
+                                MessageBox.Show("You logged in as Worker");
 
-                            break;
-                        //case null:
-                            
-                        //    var client = new User(reader.GetString(1), reader.GetString(3), reader.GetString(2), reader.GetInt32(4));
-                        //    reader.Close();
-
-                        //    var clientForm = new ClientForm(client);
-
-                        //    clientForm.Show();
-                        //    Hide();
-
-                        //    MessageBox.Show("You logged in as Client!");
-
-                        //    reader.Close();
-
-                        //    break;
+                                break;
+                        }
                     }
+
+                    
 
                     
                 }
