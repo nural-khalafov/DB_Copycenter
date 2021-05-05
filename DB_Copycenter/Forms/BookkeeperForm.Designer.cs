@@ -31,13 +31,13 @@ namespace DB_Copycenter.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookkeeperForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.WorkExperienceLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.SalaryLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.PositionLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.FioLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -56,13 +56,13 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.WorkExperienceLabel);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.SalaryLabel);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.PositionLabel);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.FioLabel);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -73,17 +73,17 @@ namespace DB_Copycenter.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Окно пользователя";
             // 
-            // label8
+            // WorkExperienceLabel
             // 
-            this.label8.BackColor = System.Drawing.Color.Bisque;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(351, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 29);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "1 год";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WorkExperienceLabel.BackColor = System.Drawing.Color.Bisque;
+            this.WorkExperienceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WorkExperienceLabel.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorkExperienceLabel.Location = new System.Drawing.Point(351, 241);
+            this.WorkExperienceLabel.Name = "WorkExperienceLabel";
+            this.WorkExperienceLabel.Size = new System.Drawing.Size(164, 29);
+            this.WorkExperienceLabel.TabIndex = 13;
+            this.WorkExperienceLabel.Text = "1 год";
+            this.WorkExperienceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -96,17 +96,17 @@ namespace DB_Copycenter.Forms
             this.label7.Text = "Стаж работы";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // SalaryLabel
             // 
-            this.label6.BackColor = System.Drawing.Color.DarkOrange;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(331, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 29);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "1500 $";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SalaryLabel.BackColor = System.Drawing.Color.DarkOrange;
+            this.SalaryLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SalaryLabel.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SalaryLabel.Location = new System.Drawing.Point(331, 180);
+            this.SalaryLabel.Name = "SalaryLabel";
+            this.SalaryLabel.Size = new System.Drawing.Size(203, 29);
+            this.SalaryLabel.TabIndex = 11;
+            this.SalaryLabel.Text = "1500 $";
+            this.SalaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -119,17 +119,17 @@ namespace DB_Copycenter.Forms
             this.label5.Text = "Зарплата";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // PositionLabel
             // 
-            this.label4.BackColor = System.Drawing.Color.LightGray;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(288, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(288, 29);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Бухгалтер";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PositionLabel.BackColor = System.Drawing.Color.LightGray;
+            this.PositionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PositionLabel.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PositionLabel.Location = new System.Drawing.Point(288, 119);
+            this.PositionLabel.Name = "PositionLabel";
+            this.PositionLabel.Size = new System.Drawing.Size(288, 29);
+            this.PositionLabel.TabIndex = 9;
+            this.PositionLabel.Text = "Бухгалтер";
+            this.PositionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -142,17 +142,17 @@ namespace DB_Copycenter.Forms
             this.label1.Text = "Должность";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // FioLabel
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(288, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 29);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Григорий Грильяжный";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FioLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FioLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FioLabel.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FioLabel.Location = new System.Drawing.Point(288, 58);
+            this.FioLabel.Name = "FioLabel";
+            this.FioLabel.Size = new System.Drawing.Size(288, 29);
+            this.FioLabel.TabIndex = 7;
+            this.FioLabel.Text = "Григорий Грильяжный";
+            this.FioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -268,13 +268,13 @@ namespace DB_Copycenter.Forms
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label WorkExperienceLabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label SalaryLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label PositionLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FioLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox3;

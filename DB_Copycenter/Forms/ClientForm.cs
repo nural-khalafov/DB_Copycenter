@@ -24,7 +24,7 @@ namespace DB_Copycenter.Forms
 
             client = client_;
             FioLabel.Text = client_.Fio;
-            SelfCashLabel.Text = Convert.ToString(client_.SelfCash + "$");
+            SelfCashLabel.Text = Convert.ToString(client_.SelfCash + " $");
 
             services = new List<Service>
             {

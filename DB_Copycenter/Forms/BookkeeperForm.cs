@@ -18,6 +18,11 @@ namespace DB_Copycenter.Forms
             InitializeComponent();
 
             _bookkeeper = bookkeper;
+
+            FioLabel.Text = bookkeper.Fio;
+            PositionLabel.Text = bookkeper.Position;
+            SalaryLabel.Text = Convert.ToString(bookkeper.Salary + "$");
+            WorkExperienceLabel.Text = Convert.ToString(bookkeper.WorkExperience + " год");
         }
     }
 }

@@ -35,5 +35,10 @@
             this.WorkExperience = workExperience;
             this.Salary = salary;
         }
+
+        public Worker(User user, string position) : base(user)
+        {
+            this.Position = position;
+        }
     }
 }

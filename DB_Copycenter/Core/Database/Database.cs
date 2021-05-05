@@ -164,9 +164,14 @@ namespace DB_Copycenter
             return command.ExecuteReader();
         }
 
+        /// <summary>
+        /// Returns worker with current login
+        /// </summary>
+        /// <param name="login">Worker's login</param>
+        /// <returns></returns>
         public NpgsqlDataReader SelectFromWorkerTable(string login)
         {
-            var command = new NpgsqlCommand("SELECT * FROM Worker JOIN Position ON Position.id = position.id " +
+            var command = new NpgsqlCommand("SELECT * FROM Worker JOIN Position ON Position.id = position_id " +
                                             "JOIN Client ON Client.id = client_id WHERE login = '" + login + "'", conn);
 
             return command.ExecuteReader();
@@ -175,6 +180,14 @@ namespace DB_Copycenter
         public NpgsqlDataReader SelectFromWorkerTable()
         {
             var command = new NpgsqlCommand("SELECT * FROM Worker JOIN Position ON (Position.id = Worker.position_id)", conn);
+
+            return command.ExecuteReader();
+        }
+
+        public NpgsqlDataReader SelectPositionFromWorkerTable(string login)
+        {
+            var command = new NpgsqlCommand("SELECT Position.position FROM Worker JOIN Position ON Position.id = position_id " +
+                                            "JOIN Client ON Client.id = client_id WHERE login = '" + login + "'", conn);
 
             return command.ExecuteReader();
         }
@@ -236,7 +249,7 @@ namespace DB_Copycenter
         /// </summary>
         /// <param name="position">Position that not equals Администратор</param>
         /// <returns></returns>
-        public NpgsqlDataReader SelectWorkerDataFromWorkerTable(string position)
+        public NpgsqlDataReader SelectWorkerDataFromWorkerTable()
         {
             var command = new NpgsqlCommand("SELECT Client.fio, Position.position, Worker.work_experience, Position.salary " +
                                             "FROM Worker " +
@@ -258,7 +271,12 @@ namespace DB_Copycenter
             return command.ExecuteReader();
         }
 
-        
+        public NpgsqlDataReader SelectClientFioFromClientTable()
+        {
+            var command = new NpgsqlCommand("SELECT fio FROM Client WHERE NOT fio = 'Клиент с улицы'", conn);
+
+            return command.ExecuteReader();
+        }
 
         #endregion
 

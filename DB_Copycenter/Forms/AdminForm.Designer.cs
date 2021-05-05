@@ -35,12 +35,12 @@ namespace DB_Copycenter.Forms
             this.InventoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.UpdateWorkerButton = new System.Windows.Forms.Button();
+            this.UpdateInventoryButton = new System.Windows.Forms.Button();
+            this.DeleteWorkerButton = new System.Windows.Forms.Button();
+            this.AddWorkerButton = new System.Windows.Forms.Button();
+            this.DeleteInventoryButton = new System.Windows.Forms.Button();
+            this.AddInventoryButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.WorkerFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkerPositionAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,15 +49,16 @@ namespace DB_Copycenter.Forms
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.WorkExperienceLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.SalaryLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.PositionLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.FioLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,13 +68,14 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.RefreshButton);
             this.groupBox4.Controls.Add(this.dataGridView);
-            this.groupBox4.Controls.Add(this.button14);
-            this.groupBox4.Controls.Add(this.button13);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.UpdateWorkerButton);
+            this.groupBox4.Controls.Add(this.UpdateInventoryButton);
+            this.groupBox4.Controls.Add(this.DeleteWorkerButton);
+            this.groupBox4.Controls.Add(this.AddWorkerButton);
+            this.groupBox4.Controls.Add(this.DeleteInventoryButton);
+            this.groupBox4.Controls.Add(this.AddInventoryButton);
             this.groupBox4.Controls.Add(this.dataGridView1);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label10);
@@ -84,7 +86,6 @@ namespace DB_Copycenter.Forms
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Панель Администратора филиала";
-            this.groupBox4.Visible = false;
             // 
             // dataGridView
             // 
@@ -116,59 +117,59 @@ namespace DB_Copycenter.Forms
             this.InventoryCost.Name = "InventoryCost";
             this.InventoryCost.Width = 150;
             // 
-            // button14
+            // UpdateWorkerButton
             // 
-            this.button14.Location = new System.Drawing.Point(639, 327);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(84, 44);
-            this.button14.TabIndex = 27;
-            this.button14.Text = "Редактировать";
-            this.button14.UseVisualStyleBackColor = true;
+            this.UpdateWorkerButton.Location = new System.Drawing.Point(639, 327);
+            this.UpdateWorkerButton.Name = "UpdateWorkerButton";
+            this.UpdateWorkerButton.Size = new System.Drawing.Size(84, 44);
+            this.UpdateWorkerButton.TabIndex = 27;
+            this.UpdateWorkerButton.Text = "Редактировать";
+            this.UpdateWorkerButton.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // UpdateInventoryButton
             // 
-            this.button13.Location = new System.Drawing.Point(639, 116);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(84, 44);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "Редактировать";
-            this.button13.UseVisualStyleBackColor = true;
+            this.UpdateInventoryButton.Location = new System.Drawing.Point(639, 116);
+            this.UpdateInventoryButton.Name = "UpdateInventoryButton";
+            this.UpdateInventoryButton.Size = new System.Drawing.Size(84, 44);
+            this.UpdateInventoryButton.TabIndex = 26;
+            this.UpdateInventoryButton.Text = "Редактировать";
+            this.UpdateInventoryButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // DeleteWorkerButton
             // 
-            this.button5.Location = new System.Drawing.Point(639, 399);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 35);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Удалить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.DeleteWorkerButton.Location = new System.Drawing.Point(639, 399);
+            this.DeleteWorkerButton.Name = "DeleteWorkerButton";
+            this.DeleteWorkerButton.Size = new System.Drawing.Size(84, 35);
+            this.DeleteWorkerButton.TabIndex = 19;
+            this.DeleteWorkerButton.Text = "Удалить";
+            this.DeleteWorkerButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // AddWorkerButton
             // 
-            this.button4.Location = new System.Drawing.Point(639, 258);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 35);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AddWorkerButton.Location = new System.Drawing.Point(639, 258);
+            this.AddWorkerButton.Name = "AddWorkerButton";
+            this.AddWorkerButton.Size = new System.Drawing.Size(84, 35);
+            this.AddWorkerButton.TabIndex = 18;
+            this.AddWorkerButton.Text = "Добавить";
+            this.AddWorkerButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // DeleteInventoryButton
             // 
-            this.button3.Location = new System.Drawing.Point(639, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 35);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DeleteInventoryButton.Location = new System.Drawing.Point(639, 194);
+            this.DeleteInventoryButton.Name = "DeleteInventoryButton";
+            this.DeleteInventoryButton.Size = new System.Drawing.Size(84, 35);
+            this.DeleteInventoryButton.TabIndex = 17;
+            this.DeleteInventoryButton.Text = "Удалить";
+            this.DeleteInventoryButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // AddInventoryButton
             // 
-            this.button2.Location = new System.Drawing.Point(639, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 35);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddInventoryButton.Location = new System.Drawing.Point(639, 45);
+            this.AddInventoryButton.Name = "AddInventoryButton";
+            this.AddInventoryButton.Size = new System.Drawing.Size(84, 35);
+            this.AddInventoryButton.TabIndex = 16;
+            this.AddInventoryButton.Text = "Добавить";
+            this.AddInventoryButton.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -231,13 +232,13 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.WorkExperienceLabel);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.SalaryLabel);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.PositionLabel);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.FioLabel);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -248,17 +249,17 @@ namespace DB_Copycenter.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Окно пользователя";
             // 
-            // label8
+            // WorkExperienceLabel
             // 
-            this.label8.BackColor = System.Drawing.Color.Bisque;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(351, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 29);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "1 год";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WorkExperienceLabel.BackColor = System.Drawing.Color.Bisque;
+            this.WorkExperienceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WorkExperienceLabel.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorkExperienceLabel.Location = new System.Drawing.Point(351, 241);
+            this.WorkExperienceLabel.Name = "WorkExperienceLabel";
+            this.WorkExperienceLabel.Size = new System.Drawing.Size(164, 29);
+            this.WorkExperienceLabel.TabIndex = 13;
+            this.WorkExperienceLabel.Text = "1 год";
+            this.WorkExperienceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -271,17 +272,17 @@ namespace DB_Copycenter.Forms
             this.label7.Text = "Стаж работы";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // SalaryLabel
             // 
-            this.label6.BackColor = System.Drawing.Color.DarkOrange;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(331, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 29);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "1500 $";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SalaryLabel.BackColor = System.Drawing.Color.DarkOrange;
+            this.SalaryLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SalaryLabel.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SalaryLabel.Location = new System.Drawing.Point(331, 180);
+            this.SalaryLabel.Name = "SalaryLabel";
+            this.SalaryLabel.Size = new System.Drawing.Size(203, 29);
+            this.SalaryLabel.TabIndex = 11;
+            this.SalaryLabel.Text = "1500 $";
+            this.SalaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -294,17 +295,17 @@ namespace DB_Copycenter.Forms
             this.label5.Text = "Зарплата";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // PositionLabel
             // 
-            this.label4.BackColor = System.Drawing.Color.LightGray;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(288, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(288, 29);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Администратор";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PositionLabel.BackColor = System.Drawing.Color.LightGray;
+            this.PositionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PositionLabel.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PositionLabel.Location = new System.Drawing.Point(288, 119);
+            this.PositionLabel.Name = "PositionLabel";
+            this.PositionLabel.Size = new System.Drawing.Size(288, 29);
+            this.PositionLabel.TabIndex = 9;
+            this.PositionLabel.Text = "Администратор";
+            this.PositionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -317,17 +318,17 @@ namespace DB_Copycenter.Forms
             this.label1.Text = "Должность";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // FioLabel
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(288, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 29);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Виталий Громяко";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FioLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FioLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FioLabel.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FioLabel.Location = new System.Drawing.Point(288, 58);
+            this.FioLabel.Name = "FioLabel";
+            this.FioLabel.Size = new System.Drawing.Size(288, 29);
+            this.FioLabel.TabIndex = 7;
+            this.FioLabel.Text = "Виталий Громяко";
+            this.FioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -352,6 +353,17 @@ namespace DB_Copycenter.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(10, 22);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(75, 63);
+            this.RefreshButton.TabIndex = 28;
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // AdminForm
             // 
@@ -381,12 +393,12 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCost;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button UpdateWorkerButton;
+        private System.Windows.Forms.Button UpdateInventoryButton;
+        private System.Windows.Forms.Button DeleteWorkerButton;
+        private System.Windows.Forms.Button AddWorkerButton;
+        private System.Windows.Forms.Button DeleteInventoryButton;
+        private System.Windows.Forms.Button AddInventoryButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkerFIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkerPositionAdmin;
@@ -395,14 +407,15 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label WorkExperienceLabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label SalaryLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label PositionLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FioLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }
