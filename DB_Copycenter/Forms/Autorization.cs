@@ -50,12 +50,10 @@ namespace DB_Copycenter
                 if (_passwordHashed == user.Password)
                 {
                     reader = DBHandler.GetDatabase().SelectPositionFromWorkerTable(user.Login);
-                    reader.Read();
 
                     if (reader.Read())
                     {
                         worker = new Worker(user, reader.GetString(0));
-                        reader.Close();
                         switch (worker.Position)
                         {
                             case "Администратор":
@@ -101,9 +99,7 @@ namespace DB_Copycenter
                                 break;
                         }
                     }
-
-                    
-
+                    reader.Close();
                     
                 }
                 else
@@ -111,9 +107,12 @@ namespace DB_Copycenter
                     MessageBox.Show("Password is Invalid. Please, try again...");
                 }
 
-                
+                reader = DBHandler.GetDatabase().SelectFromUsersTable(_login);
+                reader.Read();
+
                 if (_passwordHashed == user.Password)
                 {
+                    
                     if (reader.IsOnRow)
                     {
                         var client = user;
