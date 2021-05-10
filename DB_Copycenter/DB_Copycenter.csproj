@@ -85,8 +85,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Database\Database.cs" />
-    <Compile Include="Core\Database\DBHandler.cs" />
+    <Compile Include="Core\Utility\Database\Database.cs" />
+    <Compile Include="Core\Utility\Database\DBHandler.cs" />
     <Compile Include="Core\Utility\Time.cs" />
     <Compile Include="Core\Interfaces\ILoginService.cs" />
     <Compile Include="Core\Interfaces\IPresenter.cs" />

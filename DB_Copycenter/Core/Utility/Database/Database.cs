@@ -87,13 +87,45 @@ namespace DB_Copycenter
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="worker"></param>
-        public void InsertWorkerData(Worker worker)
+        public void InsertPositionData(int id, string position, int salary)
         {
+            using (var command = new NpgsqlCommand("INSERT INTO Position (id, position, salary) " +
+                                                   "VALUES (@Id, @pos, @sal)", conn))
+            {
+                command.Parameters.AddWithValue("Id", id);
+                command.Parameters.AddWithValue("pos", position);
+                command.Parameters.AddWithValue("sal", salary);
+            }
+        }
 
+        public void InsertWorkerData(int id, int clientId, int positionId)
+        {
+            using (var command = new NpgsqlCommand("INSERT INTO Worker (id, client_id, position_id, filial_id, work_experience) " +
+                                                   "VALUES (@Id, @cl_id, @pos_id, @fil_id, @work_exp)", conn))
+            {
+                command.Parameters.AddWithValue("Id", clientId);
+                command.Parameters.AddWithValue("cl_id", clientId);
+                command.Parameters.AddWithValue("pos_id", positionId);
+                command.Parameters.AddWithValue("fil_id", 1);
+                command.Parameters.AddWithValue("work_exp", 1);
+
+                var nRows = command.ExecuteNonQuery();
+            }
+        }
+
+
+        public void InsertPaymentData()
+        {
+            using (var command = new NpgsqlCommand("INSERT INTO Payment (client_id, filial_id, payment_time, payment_status) " +
+                                                   "VALUES (@cl_id, @fil_id, @pay_time, @pay_status)", conn))
+            {
+                command.Parameters.AddWithValue("cl_id", 1);
+                command.Parameters.AddWithValue("fil_id", 1);
+                command.Parameters.AddWithValue("pay_time", Time.PaymentTime);
+                command.Parameters.AddWithValue("pay_status", "in process");
+
+                var nRows = command.ExecuteNonQuery();
+            }
         }
 
         /// <summary>
@@ -141,13 +173,27 @@ namespace DB_Copycenter
         {
             using (var command = new NpgsqlCommand("INSERT INTO Report (filial_id, creation_date, " +
                                                    "income, description, costs)" +
-                                                   "VALUES (@fil_id, @cr_date, @inc, @desc, @cost)"))
+                                                   "VALUES (@fil_id, @cr_date, @inc, @desc, @cost)", conn))
             {
                 command.Parameters.AddWithValue("fil_id", 1);
-                command.Parameters.AddWithValue("cr_date", Time.ReportTime.ToString("g"));
+                command.Parameters.AddWithValue("cr_date", Time.ReportTime);
                 command.Parameters.AddWithValue("inc", income);
                 command.Parameters.AddWithValue("desc", descripton);
                 command.Parameters.AddWithValue("cost", costs);
+
+                var nRows = command.ExecuteNonQuery();
+            }
+        }
+
+        public void InsertInventoryData(string name, int quantity, int cost)
+        {
+            using (var command = new NpgsqlCommand("INSERT INTO Inventory (filial_id, quantity, name, cost_per_unit) " +
+                                                   "VALUES (@fil_id, @quant, @nam, @cost)", conn))
+            {
+                command.Parameters.AddWithValue("fil_id", 1);
+                command.Parameters.AddWithValue("quant", quantity);
+                command.Parameters.AddWithValue("nam", name);
+                command.Parameters.AddWithValue("cost", cost);
 
                 var nRows = command.ExecuteNonQuery();
             }
@@ -182,6 +228,10 @@ namespace DB_Copycenter
             return command.ExecuteReader();
         }
 
+        /// <summary>
+        /// Returns all data from worker table, plus filtered by worker's position
+        /// </summary>
+        /// <returns></returns>
         public NpgsqlDataReader SelectFromWorkerTable()
         {
             var command = new NpgsqlCommand("SELECT * FROM Worker JOIN Position ON (Position.id = Worker.position_id)", conn);
@@ -189,6 +239,11 @@ namespace DB_Copycenter
             return command.ExecuteReader();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         public NpgsqlDataReader SelectPositionFromWorkerTable(string login)
         {
             var command = new NpgsqlCommand("SELECT Position.position FROM Worker JOIN Position ON Position.id = position_id " +
@@ -216,38 +271,50 @@ namespace DB_Copycenter
         }
 
         /// <summary>
+        /// Select all user info except street client
+        /// </summary>
+        /// <returns></returns>
+        public NpgsqlDataReader SelectAllDataFromUserTable()
+        {
+            var command = new NpgsqlCommand("SELECT Client.id, Client.fio, Position.position, Worker.work_experience, Position.salary FROM Client " +
+                                            "LEFT JOIN Worker ON Worker.id = Client.id " +
+                                            "LEFT JOIN Position ON Position.id = Worker.position_id " +
+                                            "WHERE NOT Client.fio = 'Клиент с улицы'", conn);
+
+            return command.ExecuteReader();
+        }
+
+        public NpgsqlDataReader SelectAllClientDataFromUserTable()
+        {
+            var command = new NpgsqlCommand("SELECT Client.id, Client.fio, Client.self_cash FROM Client " +
+                                            "LEFT JOIN Worker ON Worker.id = Client.id " +
+                                            "LEFT JOIN Position ON Position.id = Worker.position_id " +
+                                            "WHERE position IS NULL AND NOT fio = 'Клиент с улицы'", conn);
+
+            return command.ExecuteReader();
+        }
+
+        /// <summary>
         /// Returns clients fio and cash
         /// </summary>
         /// <returns>Returns execute reader method</returns>
         public NpgsqlDataReader SelectClientDataFromUserTable()
         {
-            var command = new NpgsqlCommand("SELECT fio, self_cash FROM Client", conn);
+            var command = new NpgsqlCommand("SELECT fio, self_cash FROM Client " +
+                                            "LEFT JOIN Worker ON Worker.id = Client.id " +
+                                            "LEFT JOIN Position ON Position.id = Worker.position_id " +
+                                            "WHERE position IS NULL AND NOT fio = 'Клиент с улицы'", conn);
 
             return command.ExecuteReader();
         }
 
-        /// <summary>
-        /// Returns client from street data
-        /// </summary>
-        /// <returns></returns>
-        public NpgsqlDataReader SelectClientFromStreetData()
+        public NpgsqlDataReader SelectClientDataFromUserTable(int clientId)
         {
-            var command = new NpgsqlCommand("SELECT fio, self_cash FROM Client WHERE id = 1", conn);
+            var command = new NpgsqlCommand("SELECT fio, self_cash FROM Client WHERE id = " + clientId, conn);
 
             return command.ExecuteReader();
         }
 
-        /// <summary>
-        /// Returns all in progress payments
-        /// </summary>
-        /// <param name="paymentStatus">Payment status</param>
-        /// <returns>Returns execute reader method</returns>
-        public NpgsqlDataReader SelectInProgressPaymentsFromPaymentTable(string paymentStatus)
-        {
-            var command = new NpgsqlCommand("SELECT * FROM Payment WHERE payment_status = 'In progress'", conn);
-
-            return command.ExecuteReader();
-        }
 
         /// <summary>
         /// Returns all workers, except admin of copycenter
@@ -271,28 +338,68 @@ namespace DB_Copycenter
         /// <returns></returns>
         public NpgsqlDataReader SelectInventoryDataFromInventoryTable()
         {
-            var command = new NpgsqlCommand("SELECT name, quantity, costs FROM Inventory", conn);
+            var command = new NpgsqlCommand("SELECT id, name, quantity, cost_per_unit FROM Inventory", conn);
 
             return command.ExecuteReader();
         }
 
-        public NpgsqlDataReader SelectClientFioFromClientTable()
+        /// <summary>
+        /// Returns all payment data from payment table
+        /// </summary>
+        /// <returns></returns>
+        public NpgsqlDataReader SelectPaymentFromPaymentTable()
         {
-            var command = new NpgsqlCommand("SELECT fio FROM Client WHERE NOT fio = 'Клиент с улицы'", conn);
+            var command = new NpgsqlCommand("SELECT * FROM Payment ORDER BY id DESC", conn);
 
             return command.ExecuteReader();
         }
 
-        public NpgsqlDataReader SelectServiceFromServiceTable()
+        /// <summary>
+        /// Select All data from done payments
+        /// </summary>
+        /// <returns></returns>
+        public NpgsqlDataReader SelectDonePaymentFromPaymentTable()
         {
-            var command = new NpgsqlCommand("SELECT * FROM Service", conn);
+            var command = new NpgsqlCommand("SELECT cost FROM Payment " +
+                                            "LEFT JOIN ServicesInPayment ON ServicesInPayment.id = Payment.id " +
+                                            "JOIN Service ON Service.id = ServicesInPayment.service_id " +
+                                            "WHERE payment_status = 'done'", conn);
 
             return command.ExecuteReader();
         }
 
-        public NpgsqlDataReader SelectCurrentPaymentIdFromPaymentTable()
+        /// <summary>
+        /// Returns all payments(in process) with client FIO, service name, cost, and payment status
+        /// </summary>
+        /// <returns>LOL</returns>
+        public NpgsqlDataReader SelectInProcessPaymentDataFromPaymentTable()
         {
-            var command = new NpgsqlCommand("SELECT * FROM Payment", conn);
+            var command = new NpgsqlCommand("SELECT Payment.id, Client.fio, " +
+                                            "Service.service_name, Service.cost, " +
+                                            "Payment.payment_status FROM Payment " +
+                                            "JOIN Client ON Client.id = client_id " +
+                                            "LEFT JOIN ServicesInPayment ON ServicesInPayment.id = Payment.id " +
+                                            "LEFT JOIN Service ON Service.id = ServicesInPayment.service_id " +
+                                            "WHERE NOT Client.id = 1" +
+                                            "ORDER BY Payment.id", conn);
+
+            return command.ExecuteReader();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public NpgsqlDataReader SelectInProcessNonClientPaymentDataFromPaymentTable()
+        {
+            var command = new NpgsqlCommand("SELECT Payment.id, " +
+                                            "Service.service_name, Service.cost, " +
+                                            "Payment.payment_status FROM Payment " +
+                                            "JOIN Client ON Client.id = client_id " +
+                                            "LEFT JOIN ServicesInPayment ON ServicesInPayment.id = Payment.id " +
+                                            "LEFT JOIN Service ON Service.id = ServicesInPayment.service_id " +
+                                            "WHERE Client.id = 1 " +
+                                            "ORDER BY Payment.id", conn);
 
             return command.ExecuteReader();
         }
@@ -308,7 +415,7 @@ namespace DB_Copycenter
         /// <param name="paymentId"></param>
         public void UpdatePaymentStatusToDone(DateTime date, int paymentId)
         {
-            var command = new NpgsqlCommand("UPDATE Payment SET payment_status = 'Done', " +
+            var command = new NpgsqlCommand("UPDATE Payment SET payment_status = 'done', " +
                                             "payment_time = '" + date.Date + "' WHERE id = " + paymentId, conn);
 
             command.ExecuteNonQuery();
@@ -318,10 +425,10 @@ namespace DB_Copycenter
         /// Updates NotClient payment status to Done
         /// </summary>
         /// <param name="date">Payment date</param>
-        public void UpdateNotClientPaymentStatusToDone(DateTime date)
+        public void UpdateNotClientPaymentStatusToDone(DateTime date, int paymentId)
         {
-            var command = new NpgsqlCommand("UPDATE Payment SET payment_status = 'Done', " +
-                                            "payment_time = '" + date.Date + "' WHERE client_id = 1", conn);
+            var command = new NpgsqlCommand("UPDATE Payment SET payment_status = 'done', " +
+                                            "payment_time = '" + date.Date + "' WHERE id = " + paymentId, conn);
 
             command.ExecuteNonQuery();
         }
@@ -356,7 +463,7 @@ namespace DB_Copycenter
 
         public void UpdateInventoryData(int quantity, string name, int costPerUnit)
         {
-            var command = new NpgsqlCommand("UPDATE Inventory SET filial_id = 1, " +
+            var command = new NpgsqlCommand("UPDATE Inventory SET " +
                                             "quantitiy = " + quantity + ", name = '" + name + "', cost_per_unit = " + costPerUnit + "", conn);
 
             command.ExecuteNonQuery();
@@ -373,7 +480,26 @@ namespace DB_Copycenter
 
         #region Npgsql DELETE Methods
 
-        
+        public void DeleteWorkerData(int clientId)
+        {
+            var command = new NpgsqlCommand("DELETE FROM Worker WHERE id = " + clientId, conn);
+
+            command.ExecuteNonQuery();
+        }
+
+        public void DeleteWorkerPositionData(int clientId)
+        {
+            var command = new NpgsqlCommand("DELETE FROM Position WHERE id = " + clientId, conn);
+
+            command.ExecuteNonQuery();
+        }
+
+        public void DeleteInventoryData(int inventoryId)
+        {
+            var command = new NpgsqlCommand("DELETE FROM Inventory WHERE id = " + inventoryId, conn);
+
+            command.ExecuteNonQuery();
+        }
 
         #endregion
     }

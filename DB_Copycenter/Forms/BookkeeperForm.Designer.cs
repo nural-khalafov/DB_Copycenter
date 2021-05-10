@@ -44,11 +44,16 @@ namespace DB_Copycenter.Forms
             this.RefreshButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.SendReportButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.IncomeLabel = new System.Windows.Forms.Label();
+            this.CostsLabel = new System.Windows.Forms.Label();
             this.ReportDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportConsumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SendReportButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -181,6 +186,11 @@ namespace DB_Copycenter.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.CostsLabel);
+            this.groupBox3.Controls.Add(this.IncomeLabel);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.RefreshButton);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.dataGridView);
@@ -197,17 +207,18 @@ namespace DB_Copycenter.Forms
             // 
             this.RefreshButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshButton.BackgroundImage")));
             this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshButton.Location = new System.Drawing.Point(662, 16);
+            this.RefreshButton.Location = new System.Drawing.Point(686, 157);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(75, 63);
+            this.RefreshButton.Size = new System.Drawing.Size(51, 44);
             this.RefreshButton.TabIndex = 30;
             this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(32, 19);
+            this.label12.Location = new System.Drawing.Point(10, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(249, 23);
             this.label12.TabIndex = 13;
@@ -222,10 +233,78 @@ namespace DB_Copycenter.Forms
             this.ReportDate,
             this.ReportIncome,
             this.ReportConsumption});
-            this.dataGridView.Location = new System.Drawing.Point(14, 45);
+            this.dataGridView.Location = new System.Drawing.Point(14, 133);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(582, 387);
+            this.dataGridView.Size = new System.Drawing.Size(582, 299);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            // 
+            // SendReportButton
+            // 
+            this.SendReportButton.Location = new System.Drawing.Point(630, 257);
+            this.SendReportButton.Name = "SendReportButton";
+            this.SendReportButton.Size = new System.Drawing.Size(107, 102);
+            this.SendReportButton.TabIndex = 1;
+            this.SendReportButton.Text = "Составить отчёт";
+            this.SendReportButton.UseVisualStyleBackColor = true;
+            this.SendReportButton.Click += new System.EventHandler(this.SendReportButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(55, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 23);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Получить текущие:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(55, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 23);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Доход";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(297, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 23);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Расходы";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // IncomeLabel
+            // 
+            this.IncomeLabel.BackColor = System.Drawing.Color.LawnGreen;
+            this.IncomeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IncomeLabel.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IncomeLabel.Location = new System.Drawing.Point(145, 56);
+            this.IncomeLabel.Name = "IncomeLabel";
+            this.IncomeLabel.Size = new System.Drawing.Size(146, 29);
+            this.IncomeLabel.TabIndex = 34;
+            this.IncomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IncomeLabel.Click += new System.EventHandler(this.IncomeLabel_Click);
+            // 
+            // CostsLabel
+            // 
+            this.CostsLabel.BackColor = System.Drawing.Color.OrangeRed;
+            this.CostsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CostsLabel.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CostsLabel.Location = new System.Drawing.Point(387, 56);
+            this.CostsLabel.Name = "CostsLabel";
+            this.CostsLabel.Size = new System.Drawing.Size(146, 29);
+            this.CostsLabel.TabIndex = 35;
+            this.CostsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CostsLabel.Click += new System.EventHandler(this.CostsLabel_Click);
             // 
             // ReportDescription
             // 
@@ -237,6 +316,7 @@ namespace DB_Copycenter.Forms
             // 
             this.ReportDate.HeaderText = "Дата создания";
             this.ReportDate.Name = "ReportDate";
+            this.ReportDate.ReadOnly = true;
             // 
             // ReportIncome
             // 
@@ -247,15 +327,6 @@ namespace DB_Copycenter.Forms
             // 
             this.ReportConsumption.HeaderText = "Расходы";
             this.ReportConsumption.Name = "ReportConsumption";
-            // 
-            // SendReportButton
-            // 
-            this.SendReportButton.Location = new System.Drawing.Point(620, 194);
-            this.SendReportButton.Name = "SendReportButton";
-            this.SendReportButton.Size = new System.Drawing.Size(107, 102);
-            this.SendReportButton.TabIndex = 1;
-            this.SendReportButton.Text = "Составить отчёт";
-            this.SendReportButton.UseVisualStyleBackColor = true;
             // 
             // BookkeeperForm
             // 
@@ -292,11 +363,16 @@ namespace DB_Copycenter.Forms
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button SendReportButton;
+        private System.Windows.Forms.Button RefreshButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label IncomeLabel;
+        private System.Windows.Forms.Label CostsLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportIncome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportConsumption;
-        private System.Windows.Forms.Button SendReportButton;
-        private System.Windows.Forms.Button RefreshButton;
     }
 }

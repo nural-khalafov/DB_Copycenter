@@ -6,7 +6,7 @@ namespace DB_Copycenter.Forms
 {
     public partial class ClientForm : Form
     {
-        private readonly User client;
+        private readonly User _client;
         private Service _service;
 
         private int _selectedId;
@@ -16,13 +16,13 @@ namespace DB_Copycenter.Forms
         private List<Service> services;
 
 
-        public ClientForm(User client_)
+        public ClientForm(User client)
         {
             InitializeComponent();
 
-            client = client_;
-            FioLabel.Text = client_.Fio;
-            SelfCashLabel.Text = Convert.ToString(client_.SelfCash + " $");
+            _client = client;
+            FioLabel.Text = client.Fio;
+            SelfCashLabel.Text = Convert.ToString(client.SelfCash + "$");
 
             services = new List<Service>
             {
@@ -49,7 +49,7 @@ namespace DB_Copycenter.Forms
         private void serviceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _service = (Service)ServiceComboBox.SelectedItem;
-            ServicePriceLabel.Text = Convert.ToString(_service.ServiceCost + " $");
+            ServicePriceLabel.Text = Convert.ToString(_service.ServiceCost + "$");
         }
 
         private void AddServiceButton_Click(object sender, EventArgs e)
@@ -89,14 +89,14 @@ namespace DB_Copycenter.Forms
 
         private void GetServiceButton_Click(object sender, EventArgs e)
         {
-            DBHandler.GetDatabase().InsertPaymentData(client);
-            var reader = DBHandler.GetDatabase().SelectCurrentPaymentIdFromPaymentTable();
+            DBHandler.GetDatabase().InsertPaymentData(_client);
+            var reader = DBHandler.GetDatabase().SelectPaymentFromPaymentTable();
             reader.Read();
             _paymentId = reader.GetInt32(0);
             reader.Close();
             DBHandler.GetDatabase().InsertServicesInPaymentData(_paymentId, _selectedId);
-            DBHandler.GetDatabase().UpdateClientCashData(_selectedCost, client.Id);
-            MessageBox.Show("Ваше время оплаты: " + Time.PaymentTime.ToString("g"));
+            DBHandler.GetDatabase().UpdateClientCashData(_selectedCost, _client.Id);
+            MessageBox.Show($"Ваш номер заказа: {_paymentId}. Ваше время оплаты: " + Time.PaymentTime.ToString("g"));
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,7 +117,14 @@ namespace DB_Copycenter.Forms
 
         private void SelfCashLabel_Click(object sender, EventArgs e)
         {
+            var reader = DBHandler.GetDatabase().SelectClientDataFromUserTable(_client.Id);
+            reader.Read();
+            _client.SelfCash = reader.GetInt32(1);
+            reader.Close();
 
-        }
+            SelfCashLabel.Text = Convert.ToString(_client.SelfCash + " $");
+
+            MessageBox.Show("Updated cash");
+        } 
     }
 }
